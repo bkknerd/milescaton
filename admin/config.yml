@@ -31,6 +31,7 @@ collections:
         file: "content/site.json"
         fields:
           - { label: "Site name", name: name, widget: string }
+          - { label: "Logo (signature)", name: logo, widget: image, required: false, hint: "Transparent PNG or WebP. Shown in the header and large in the homepage hero, tinted to each page. Leave empty to use the typeset name." }
           - { label: "Tagline (next to the name, optional)", name: tagline, widget: string, required: false }
           - { label: "Browser title", name: title, widget: string }
           - { label: "Search description", name: description, widget: text }

@@ -1,5 +1,5 @@
 <header class="hdr" id="hdr">
-  <a href="/" class="wm" aria-label="{{ site.name }} — home"><b>{{ site.name }}</b>{% if site.tagline %}<i>{{ site.tagline }}</i>{% endif %}</a>
+  <a href="/" class="wm" aria-label="{{ site.name }} — home">{% if site.logo %}<span class="sig" style="--logo:url('{{ site.logo }}')" aria-hidden="true"></span>{% else %}<b>{{ site.name }}</b>{% endif %}{% if site.tagline %}<i>{{ site.tagline }}</i>{% endif %}</a>
   <nav class="nav sm" aria-label="Main">
     {%- for item in site.nav %}
     <a href="{{ item.url }}"{% if item.url | isCurrent(page.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>

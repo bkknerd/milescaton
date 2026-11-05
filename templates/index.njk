@@ -8,8 +8,12 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
 ---
 {%- set h = home.hero %}
 <section class="hero" id="top" data-theme="red" aria-label="{{ h.first }} {{ h.last }}">
+  {%- if site.logo %}
+  <h1 class="h-sig" id="hsig"><span class="vh">{{ h.first }} {{ h.last }}</span><span class="sig" style="--logo:url('{{ site.logo }}')" aria-hidden="true"></span></h1>
+  {%- else %}
   <h1 class="h-name" id="hname" aria-label="{{ h.first }} {{ h.last }}">{% for c in h.first | chars %}<span class="mask" aria-hidden="true"><span class="L">{{ c }}</span></span>{% endfor %}</h1>
   <div class="h-cat" aria-hidden="true"><span class="mask"><span id="caton" data-erode>{{ h.last }}</span></span></div>
+  {%- endif %}
   {% if h.photo %}<figure class="h-photo" id="hphoto">{% img h.photo, h.photo_alt, "", "(max-width: 820px) 58vw, 16vw", 'fetchpriority="high"' %}</figure>{% endif %}
   {% if h.strings %}<canvas class="strings" id="strings" aria-hidden="true"></canvas><div class="nut" id="nut" aria-hidden="true"></div>{% endif %}
   <div class="h-meta">

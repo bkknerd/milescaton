@@ -394,8 +394,10 @@
   /* ---------- intro: full loader on the first visit to the homepage only ---------- */
   function heroIn() {
     if (!hasG || !hero || reduce) return;
-    gsap.from(letters, { yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: 0.07 });
-    gsap.from('.h-cat .mask>span', { yPercent: 110, duration: 1.5, ease: 'expo.out', delay: 0.35 });
+    if (letters.length) gsap.from(letters, { yPercent: 110, duration: 1.4, ease: 'expo.out', stagger: 0.07 });
+    if ($('.h-cat')) gsap.from('.h-cat .mask>span', { yPercent: 110, duration: 1.5, ease: 'expo.out', delay: 0.35 });
+    // the signature writes itself on: a diagonal wipe following the pen, top-left to bottom-right
+    if ($('#hsig')) gsap.fromTo('#hsig .sig', { '--wipe': '0%' }, { '--wipe': '160%', duration: 2.2, ease: 'power2.inOut', delay: 0.15 });
     if (hph) gsap.from('.h-photo img', { yPercent: 100, duration: 1.6, ease: 'expo.out', delay: 0.5 });
     setTimeout(function () { erode(caton, RESTORE.concat(['2', '1']), 90); }, 350);
     gsap.from('.h-meta > *', { opacity: 0, y: 16, duration: 1, stagger: 0.1, delay: 0.6 });
