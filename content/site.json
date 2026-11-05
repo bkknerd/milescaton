@@ -69,6 +69,10 @@
       "heading": "Spotted something out of date?",
       "note": "Tell us and we'll fix it. Your email is optional."
     },
-    "disclaimer": "This is an unofficial, non-commercial fan site. It isn't affiliated with or endorsed by Miles Caton, his team, Columbia Records or Warner Bros. Photographs belong to their photographers; rights holders can request credit or removal."
+    "disclaimer": "This is an unofficial, non-commercial fan site. It isn't affiliated with or endorsed by Miles Caton, his team, Columbia Records or Warner Bros. Photographs belong to their photographers; rights holders can request credit or removal.",
+    "credit": {
+      "label": "Site by Draft & Logic",
+      "url": "https://draftandlogic.com"
+    }
   }
 }

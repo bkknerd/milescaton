@@ -23,6 +23,11 @@
   <div class="ft-word" id="ftword" aria-hidden="true"><span>{{ site.footer.word }}</span></div>
   <div class="ft-base">
     <p>{{ site.footer.disclaimer }}</p>
-    <a href="#main" class="sm totop" data-cursor="Top">Back to the top ↑</a>
+    <div class="ft-end sm">
+      <a href="#main" class="totop" data-cursor="Top">Back to the top ↑</a>
+      {%- if site.footer.credit and site.footer.credit.label %}
+      <a class="credit" href="{{ site.footer.credit.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ site.footer.credit.label }} <span aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a>
+      {%- endif %}
+    </div>
   </div>
 </footer>

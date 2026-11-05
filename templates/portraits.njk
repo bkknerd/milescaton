@@ -15,18 +15,18 @@ next: { url: "/honors/", title: "Honors", italic: "", aside: "One awards season"
     <p>{{ portraits.intro }}</p>
   </div>
   <div class="strip-wrap" aria-hidden="true"><div class="strip" id="strip"><div class="holes t"></div><div class="holes b"></div>
-    {%- for pass in [0,1] %}{% for f in portraits.frames %}<figure class="fr" data-cursor="Develop"><span class="no">MC-05 ▸ {{ loop.index | pad2 }}{% if loop.index % 2 == 0 %}A{% endif %}</span>{% img f.image, "", "", "320px" %}<figcaption class="cap">{{ f.caption }}</figcaption></figure>{% endfor %}{% endfor %}
+    {%- for pass in [0,1] %}{% for f in portraits.frames %}<figure class="fr" data-cursor="Develop">{% img f.image, "", "", "320px" %}<figcaption class="cap">{{ f.caption }}</figcaption></figure>{% endfor %}{% endfor %}
   </div></div>
   <div class="cs-foot sm"><span>Scroll to advance the film</span><span>Open any frame below</span></div>
   <ul class="grid" id="grid">
     {%- for f in portraits.frames %}
-    <li><button class="g-b" type="button" data-i="{{ loop.index0 }}" data-cursor="Open" aria-label="Open photo: {{ f.caption }}">{% img f.image, f.alt, "", "(max-width: 600px) 50vw, (max-width: 1100px) 33vw, 25vw" %}<span class="g-c sm"><span>{{ loop.index | pad2 }}</span><span>{{ f.caption }}</span></span></button></li>
+    <li><button class="g-b" type="button" data-i="{{ loop.index0 }}" data-cursor="Open" aria-label="Open photo: {{ f.caption }}">{% img f.image, f.alt, "", "(max-width: 600px) 50vw, (max-width: 1100px) 33vw, 25vw" %}<span class="g-c sm"><span>{{ f.caption }}</span></span></button></li>
     {%- endfor %}
   </ul>
 </section>
 <dialog class="lb" id="lb" aria-label="Photo viewer">
   <div class="lb-stage" id="lbStage">
-    {%- for f in portraits.frames %}<figure class="lb-f" data-i="{{ loop.index0 }}" hidden>{% img f.image, f.alt, "", "90vw" %}<figcaption class="sm"><span>{{ loop.index | pad2 }} / {{ portraits.frames | length | pad2 }}</span><span>{{ f.caption }}</span></figcaption></figure>{% endfor %}
+    {%- for f in portraits.frames %}<figure class="lb-f" data-i="{{ loop.index0 }}" hidden>{% img f.image, f.alt, "", "90vw" %}<figcaption class="sm"><span>{{ f.caption }}</span></figcaption></figure>{% endfor %}
   </div>
   <button class="lb-x sm" type="button" id="lbClose" data-cursor="Close">Close ✕</button>
   <button class="lb-n lb-prev sm" type="button" id="lbPrev" aria-label="Previous photo" data-cursor="Prev">←</button>

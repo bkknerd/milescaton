@@ -73,6 +73,12 @@ collections:
                   - { label: "Heading", name: heading, widget: string }
                   - { label: "Note", name: note, widget: string }
               - { label: "Disclaimer", name: disclaimer, widget: text }
+              - label: "Site credit (bottom right)"
+                name: credit
+                widget: object
+                fields:
+                  - { label: "Text", name: label, widget: string }
+                  - { label: "Link", name: url, widget: string }
 
   # ─────────────────────────── HOME ───────────────────────────
   - name: home
