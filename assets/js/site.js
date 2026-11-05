@@ -175,7 +175,7 @@
   function spanW(els) { var a = els[0].getBoundingClientRect(), b = els[els.length - 1].getBoundingClientRect(); return Math.max(1, b.right - a.left); }
   function fitHero() {
     if (!hname) return;
-    letters.forEach(function (l) { l.style.fontVariationSettings = '"wdth" 85, "wght" 650'; });
+    letters.forEach(function (l) { l.style.transform = ''; });
     root.style.setProperty('--fit', '100px');
     var w = spanW($$('.mask', hname)), target = innerWidth * (innerWidth < 820 ? 0.8 : 0.84);
     root.style.setProperty('--fit', (100 * target / w) + 'px');
@@ -183,9 +183,9 @@
   function fitFooter() {
     var fw = $('#ftword'), fi = fw && fw.querySelector('span'); if (!fi) return;
     var prev = fw.style.fontVariationSettings;
-    fw.style.setProperty('--ffit', '100px'); fw.style.fontVariationSettings = '"wdth" 150, "wght" 900';
+    fw.style.setProperty('--ffit', '100px');
     var w2 = fi.getBoundingClientRect().width || 1, padL = parseFloat(getComputedStyle($('.ft')).paddingLeft) || 20;
-    fw.style.setProperty('--ffit', (100 * (innerWidth - 2 * padL) / w2) + 'px'); fw.style.fontVariationSettings = prev;
+    fw.style.setProperty('--ffit', (100 * (innerWidth - 2 * padL) / w2) + 'px');
   }
   function catonFlick() { var n = performance.now(); if (n - lastEr > 420) { lastEr = n; erode(caton, ['1', '2', '3', '1'], 55); } if (hph) { hph.classList.add('lit'); clearTimeout(litT); litT = setTimeout(function () { hph.classList.remove('lit'); }, 650); } }
   var ys = matchMedia('(max-width: 820px)').matches ? [0.2, 0.3, 0.4, 0.5, 0.6, 0.7] : [0.33, 0.43, 0.53, 0.63, 0.73, 0.83], thick = [2.4, 2, 1.7, 1.35, 1.1, 0.85], names = ['D', 'A', 'D', 'F♯', 'A', 'D'];
@@ -211,15 +211,16 @@
       if (amp > 0) { cx.lineWidth = thick[s.i] + 5; cx.strokeStyle = 'rgba(240,162,58,' + Math.min(0.22, amp / 90) + ')'; cx.stroke(); }
     });
   }
-  var LS = letters.map(function () { return { w: 85, g: 650 }; });
+  var LS = letters.map(function () { return { w: 0 }; });
   function letterLoop(time) {
     if (reduce) return;
     letters.forEach(function (l, i) {
       var r = l.getBoundingClientRect(), t;
       if (!hasPointer) t = (Math.sin(time / 900 - i * 0.8) + 1) / 2 * 0.22;
       else { var d = Math.hypot(mx - (r.left + r.width / 2), (my - (r.top + r.height / 2)) * 1.3); t = Math.max(0, 1 - d / (Math.max(innerWidth, 700) * 0.3)); t = t * t * (3 - 2 * t); }
-      LS[i].w += (85 + 65 * t - LS[i].w) * 0.12; LS[i].g += (650 + 250 * t - LS[i].g) * 0.12;
-      l.style.fontVariationSettings = '"wdth" ' + LS[i].w.toFixed(1) + ', "wght" ' + LS[i].g.toFixed(0);
+      // wood type under the press: letters near the cursor lift and stretch, then settle back
+      LS[i].w += (t - LS[i].w) * 0.12;
+      l.style.transform = 'translateY(' + (-LS[i].w * 7).toFixed(2) + '%) scaleY(' + (1 + LS[i].w * 0.16).toFixed(3) + ')';
     });
   }
   if (hero && 'IntersectionObserver' in window) new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; }).observe(hero);
@@ -387,7 +388,7 @@
       mqs.forEach(function (m) { if (m.dir > 0) m.x = -m.el.scrollWidth / 2; });
       gsap.ticker.add(function () { var v = lenis ? lenis.velocity || 0 : 0; vel += (v - vel) * 0.1; mqs.forEach(function (m) { var half = m.el.scrollWidth / 2; m.x += m.dir * (0.6 + Math.min(Math.abs(vel), 40) * 0.2); if (m.x < -half) m.x += half; if (m.x > 0) m.x -= half; m.el.style.transform = 'translateX(' + m.x + 'px) skewX(' + Math.max(-4, Math.min(4, -vel * 0.12 * m.dir)).toFixed(2) + 'deg)'; }); });
     }
-    if ($('#ftword') && !reduce) gsap.fromTo('#ftword', { fontVariationSettings: '"wdth" 68, "wght" 900' }, { fontVariationSettings: '"wdth" 150, "wght" 900', ease: 'none', scrollTrigger: { trigger: '.ft-word', start: 'top bottom', end: 'bottom 85%', scrub: 0.6 } });
+    if ($('#ftword') && !reduce) gsap.from('#ftword span', { yPercent: 60, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: '.ft-word', start: 'top 92%', toggleActions: 'play none none none' } });
   }
 
   /* ---------- intro: full loader on the first visit to the homepage only ---------- */

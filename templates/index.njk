@@ -34,7 +34,7 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
   <div class="nowp-grid">
     <div class="nowp-copy">
       <p class="sm nowp-k">{{ n.kicker }}</p>
-      <h2 class="nowp-t">{{ n.title }}{% if n.italic %} <span class="it" data-erode>{{ n.italic }}</span>{% endif %}</h2>
+      <h2 class="nowp-t hd-slab">{{ n.title }}{% if n.italic %} <span class="it">{{ n.italic }}</span>{% endif %}</h2>
       <p class="nowp-p">{{ n.text }}</p>
       {% if n.more_url %}<a class="btn sm" href="{{ n.more_url }}" data-cursor="Open">{{ n.more_label }} →</a>{% endif %}
     </div>

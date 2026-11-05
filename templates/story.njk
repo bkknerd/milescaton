@@ -10,14 +10,14 @@ next: { url: "/sinners/", title: "Sinners", italic: "as Sammie", aside: "The rol
 ---
 <section class="phead" data-theme="black">
   <div class="kick sm"><span>The story</span><span>{{ story.entries | length }} years on record</span></div>
-  <h1 class="phead-t">{{ story.title }} <span class="it" data-erode>{{ story.italic }}</span></h1>
+  <h1 class="phead-t hd-hand">{{ story.title }} <span class="it" data-erode>{{ story.italic }}</span></h1>
   <p class="phead-p">{{ story.intro }}</p>
 </section>
 <section class="hs" id="record" data-theme="black" aria-label="Timeline">
   <div class="hs-head sm" aria-hidden="true"><span>The record so far</span><span class="hs-hint">Keep scrolling →</span></div>
   <div class="track" id="track">
     <div class="pnl intro">
-      <h2>{{ story.opener.headline }} <span class="it" data-erode>{{ story.opener.italic }}</span></h2>
+      <h2 class="hd-hand">{{ story.opener.headline }} <span class="it" data-erode>{{ story.opener.italic }}</span></h2>
       <p>{{ story.opener.text }}</p>
     </div>
     {%- for e in story.entries %}
