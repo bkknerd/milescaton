@@ -1,0 +1,364 @@
+# Decap CMS (formerly Netlify CMS) — edits the JSON files in src/_data.
+# Writing tips shown to editors:
+#   *single asterisks* = italic   **double asterisks** = condensed caps style
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Run `npx decap-server` alongside `npm start` to edit locally without logging in.
+local_backend: true
+
+site_url: https://milescaton-fan.netlify.app
+display_url: https://milescaton-fan.netlify.app
+logo_url: /assets/admin-logo.svg
+
+media_folder: "src/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+
+  # ─────────────────────────── SITE ───────────────────────────
+  - name: settings
+    label: "Site settings"
+    editor: { preview: false }
+    files:
+      - name: site
+        label: "Site, menu and footer"
+        file: "src/_data/site.json"
+        fields:
+          - { label: "Site name", name: name, widget: string }
+          - { label: "Tagline (next to the name)", name: tagline, widget: string }
+          - { label: "Browser title", name: title, widget: string }
+          - { label: "Search description", name: description, widget: text }
+          - { label: "Live site address", name: url, widget: string, hint: "e.g. https://milescaton-fan.netlify.app — used for share links" }
+          - { label: "Share image (1200×630)", name: og_image, widget: image }
+          - label: "Menu"
+            name: nav
+            widget: list
+            summary: "{{fields.label}} → {{fields.url}}"
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Link", name: url, widget: string }
+          - label: "Intro loader"
+            name: loader
+            widget: object
+            fields:
+              - { label: "Show on first visit", name: enabled, widget: boolean, default: true }
+              - { label: "Loader label", name: label, widget: string }
+          - label: "Footer"
+            name: footer
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - { label: "Right-now text", name: now, widget: text, hint: "*asterisks* for italic" }
+              - { label: "Photo", name: photo, widget: image, required: false }
+              - { label: "Photo description (alt text)", name: photo_alt, widget: string, required: false }
+              - { label: "Big closing word", name: word, widget: string }
+              - label: "Links"
+                name: links
+                widget: list
+                fields:
+                  - { label: "Label", name: label, widget: string }
+                  - { label: "URL", name: url, widget: string }
+              - label: "Corrections form"
+                name: corrections
+                widget: object
+                fields:
+                  - { label: "Show form", name: enabled, widget: boolean }
+                  - { label: "Heading", name: heading, widget: string }
+                  - { label: "Note", name: note, widget: string }
+              - { label: "Disclaimer", name: disclaimer, widget: text }
+
+  # ─────────────────────────── HOME ───────────────────────────
+  - name: home
+    label: "Homepage"
+    editor: { preview: false }
+    files:
+      - name: home
+        label: "Homepage"
+        file: "src/_data/home.json"
+        fields:
+          - { label: "Search description (optional)", name: seo_description, widget: text, required: false }
+          - label: "Hero"
+            name: hero
+            widget: object
+            fields:
+              - { label: "First name (big type)", name: first, widget: string }
+              - { label: "Last name (italic)", name: last, widget: string }
+              - { label: "Arched photo", name: photo, widget: image }
+              - { label: "Photo description (alt text)", name: photo_alt, widget: string }
+              - { label: "Bottom-left text", name: meta_left, widget: text }
+              - { label: "Bottom-centre text", name: meta_center, widget: text }
+              - { label: "Show guitar strings", name: strings, widget: boolean, default: true }
+
+          - { label: "Show the Overture", name: show_overture, widget: boolean }
+          - label: "Overture"
+            name: overture
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - label: "Story (text and small inline photos)"
+                name: blocks
+                widget: list
+                typeKey: type
+                types:
+                  - label: "Text"
+                    name: text
+                    widget: object
+                    summary: "{{fields.text}}"
+                    fields:
+                      - { label: "Text", name: text, widget: text, hint: "*italic*  **CONDENSED CAPS**" }
+                  - label: "Inline photo"
+                    name: photo
+                    widget: object
+                    fields:
+                      - { label: "Photo", name: image, widget: image }
+                      - { label: "Crop focus", name: focus, widget: string, default: "50% 30%", hint: "Horizontal% Vertical% — which part of the photo stays in the pill" }
+              - { label: "Link label", name: link_label, widget: string }
+              - { label: "Link", name: link_url, widget: string }
+
+          - { label: "Show 'Now playing'", name: show_now, widget: boolean }
+          - label: "Now playing"
+            name: now
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - { label: "Small line above title", name: kicker, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Italic word(s) after title", name: italic, widget: string, required: false }
+              - { label: "Text", name: text, widget: text }
+              - { label: "YouTube video ID", name: youtube, widget: string, hint: "The part after watch?v= — e.g. TPvGrWa3iWA" }
+              - { label: "Button label", name: more_label, widget: string }
+              - { label: "Button link", name: more_url, widget: string }
+
+          - { label: "Show chapter index", name: show_chapters, widget: boolean }
+          - label: "Chapter index"
+            name: chapters
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - label: "Chapters"
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Italic word(s)", name: italic, widget: string, required: false }
+                  - { label: "Link", name: url, widget: string }
+                  - { label: "One-line description", name: blurb, widget: string }
+                  - { label: "Hover photo", name: image, widget: image }
+
+          - { label: "Show latest press", name: show_press, widget: boolean }
+          - label: "Latest press"
+            name: press
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - { label: "How many stories", name: count, widget: number, value_type: int, min: 1, max: 8, default: 3 }
+              - { label: "Button label", name: more_label, widget: string }
+              - { label: "Button link", name: more_url, widget: string }
+
+          - { label: "Show honors ticker", name: show_honors_strip, widget: boolean }
+
+  # ─────────────────────────── PAGES ───────────────────────────
+  - name: pages
+    label: "Pages"
+    editor: { preview: false }
+    files:
+      - name: story
+        label: "Story (timeline)"
+        file: "src/_data/story.json"
+        fields:
+          - { label: "Title", name: title, widget: string }
+          - { label: "Title (italic part)", name: italic, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - { label: "Search description", name: seo_description, widget: text }
+          - label: "Opening panel"
+            name: opener
+            widget: object
+            fields:
+              - { label: "Headline", name: headline, widget: string }
+              - { label: "Headline (italic part)", name: italic, widget: string }
+              - { label: "Text", name: text, widget: text }
+          - label: "Years"
+            name: entries
+            widget: list
+            summary: "{{fields.year}} — {{fields.title}}"
+            fields:
+              - { label: "Year", name: year, widget: string }
+              - { label: "Age", name: age, widget: string, required: false }
+              - { label: "Title", name: title, widget: string, hint: "*asterisks* for italic" }
+              - { label: "Text", name: body, widget: text }
+              - { label: "Highlight in amber", name: key, widget: boolean, default: false }
+              - { label: "Photo", name: image, widget: image, required: false }
+              - { label: "Photo caption", name: caption, widget: string, required: false }
+              - { label: "Photo description (alt text)", name: alt, widget: string, required: false }
+
+      - name: sinners
+        label: "Sinners"
+        file: "src/_data/sinners.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Title line 1", name: title_a, widget: string }
+          - { label: "Title line 2 (italic)", name: title_b, widget: string }
+          - { label: "Logline", name: logline, widget: text }
+          - { label: "Side note", name: tag, widget: text }
+          - label: "Sunset scene"
+            name: dusk
+            widget: object
+            fields:
+              - { label: "Place", name: place, widget: string }
+              - { label: "Line", name: line, widget: text, hint: "*asterisks* for italic" }
+              - { label: "Song label", name: song_label, widget: string }
+              - { label: "Song title", name: song_title, widget: text }
+              - { label: "Song note", name: song_note, widget: string }
+          - { label: "Feature paragraph", name: feature, widget: text, hint: "*asterisks* for amber italic" }
+          - label: "Big numbers"
+            name: stats
+            widget: list
+            summary: "{{fields.value}}{{fields.sup}} — {{fields.label}}"
+            fields:
+              - { label: "Number", name: value, widget: string }
+              - { label: "Small superscript", name: sup, widget: string, required: false }
+              - { label: "Label", name: label, widget: string }
+          - label: "Soundtrack"
+            name: soundtrack
+            widget: object
+            fields:
+              - { label: "Label", name: label, widget: string }
+              - { label: "Label (right)", name: aside, widget: string }
+              - label: "Tracks"
+                name: tracks
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: title, widget: string }
+                  - { label: "Credit", name: credit, widget: string }
+                  - { label: "Highlight in amber", name: highlight, widget: boolean, default: false }
+
+      - name: music
+        label: "Music (singles)"
+        file: "src/_data/music.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Title", name: title, widget: string }
+          - { label: "Title (italic part)", name: italic, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - { label: "Wide photo", name: photo, widget: image, required: false }
+          - { label: "Photo description (alt text)", name: photo_alt, widget: string, required: false }
+          - { label: "Photo caption", name: photo_caption, widget: string, required: false }
+          - label: "Singles"
+            name: singles
+            widget: list
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - { label: "Note (e.g. Debut, Latest)", name: note, widget: string }
+              - { label: "Release date", name: date, widget: string }
+              - { label: "Record label colour", name: color, widget: color }
+              - { label: "Dark text on the record label", name: dark_label, widget: boolean, default: false }
+              - { label: "YouTube video ID", name: youtube, widget: string, required: false, hint: "Use this OR a playlist ID" }
+              - { label: "YouTube playlist ID", name: playlist, widget: string, required: false, hint: "The part after list= — e.g. OLAK5uy_..." }
+
+      - name: videos
+        label: "Watch (videos)"
+        file: "src/_data/videos.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Title", name: title, widget: string }
+          - { label: "Title (italic part)", name: italic, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - label: "Reels"
+            name: reels
+            widget: list
+            summary: "{{fields.title}} — {{fields.year}}"
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - { label: "Description", name: sub, widget: string }
+              - { label: "Source and date", name: meta, widget: string }
+              - { label: "Year", name: year, widget: string }
+              - { label: "YouTube video ID", name: youtube, widget: string }
+              - { label: "Screen colour 1", name: color, widget: color }
+              - { label: "Screen colour 2", name: color2, widget: color }
+
+      - name: portraits
+        label: "Portraits"
+        file: "src/_data/portraits.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Title", name: title, widget: string }
+          - { label: "Title (italic part)", name: italic, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - label: "Frames"
+            name: frames
+            widget: list
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Caption", name: caption, widget: string }
+              - { label: "Photo description (alt text)", name: alt, widget: string }
+
+      - name: press
+        label: "Press"
+        file: "src/_data/press.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Title", name: title, widget: string }
+          - { label: "Title (italic part)", name: italic, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - label: "Stories"
+            name: items
+            widget: list
+            summary: "{{fields.date}} — {{fields.outlet}}: {{fields.title}}"
+            hint: "Order doesn't matter: the page sorts newest first."
+            fields:
+              - { label: "Outlet", name: outlet, widget: string }
+              - { label: "Headline", name: title, widget: string }
+              - { label: "Date", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+              - { label: "Show date as (optional)", name: display, widget: string, required: false, hint: "Use when the exact day isn't known, e.g. Apr 2025 or 2026" }
+              - { label: "Type", name: kind, widget: select, options: ["Interview", "Feature", "News", "Performance", "TV", "Review"] }
+              - { label: "Link", name: url, widget: string }
+              - { label: "Small note (optional)", name: note, widget: string, required: false }
+              - { label: "Feature at the top", name: featured, widget: boolean, default: false }
+
+      - name: honors
+        label: "Honors"
+        file: "src/_data/honors.json"
+        fields:
+          - { label: "Search description", name: seo_description, widget: text }
+          - { label: "Label", name: label, widget: string }
+          - { label: "Label (right)", name: aside, widget: string }
+          - { label: "Intro", name: intro, widget: text }
+          - { label: "Ticker line 1", name: marquee_a, widget: list, field: { label: "Item", name: item, widget: string } }
+          - { label: "Ticker line 2", name: marquee_b, widget: list, field: { label: "Item", name: item, widget: string } }
+          - label: "Won"
+            name: won
+            widget: list
+            summary: "{{fields.body}} — {{fields.category}}"
+            fields:
+              - { label: "Awarding body", name: body, widget: string }
+              - { label: "Category", name: category, widget: string }
+          - label: "Nominated"
+            name: nominated
+            widget: list
+            summary: "{{fields.body}} — {{fields.category}}"
+            fields:
+              - { label: "Awarding body", name: body, widget: string }
+              - { label: "Category", name: category, widget: string }
+          - { label: "Footnote", name: footnote, widget: text, hint: "**double asterisks** for bold names" }

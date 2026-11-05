@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{%- set pageTitle = (title + " — " + site.name) if title else site.title %}
+{%- set pageDesc = description or site.description %}
+<title>{{ pageTitle }}</title>
+<meta name="description" content="{{ pageDesc }}">
+<link rel="canonical" href="{{ page.url | absUrl(site.url) }}">
+<meta name="theme-color" content="#a3170b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }} — {{ site.tagline }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ pageDesc }}">
+<meta property="og:url" content="{{ page.url | absUrl(site.url) }}">
+<meta property="og:image" content="{{ site.og_image | absUrl(site.url) }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/anybody-wdth.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/redaction-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/redaction-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+  document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');
+  try{ if(!sessionStorage.getItem('mc_seen') && {{ 'true' if (site.loader.enabled and page.url == '/') else 'false' }}) document.documentElement.classList.add('first-visit'); }catch(e){}
+  if (/(invite|recovery|confirmation)_token/.test(location.hash)) { var s=document.createElement('script');s.src='https://identity.netlify.com/v1/netlify-identity-widget.js';s.onload=function(){netlifyIdentity.on('init',function(u){if(!u)netlifyIdentity.on('login',function(){location.href='/admin/'})})};document.head.appendChild(s); }
+</script>
+{% if jsonld %}<script type="application/ld+json">{{ jsonld | safe }}</script>{% endif %}
+</head>
+<body data-theme="{{ theme or 'black' }}" class="page-{{ pageKey or 'page' }}">
+<a class="skip" href="#main">Skip to content</a>
+
+{% include "partials/loader.njk" %}
+<div class="curtain" aria-hidden="true"><div class="curtain-in"><span class="curtain-word" id="curtainWord"></span></div></div>
+
+<div class="c-ring" id="cring" aria-hidden="true"><span id="clabel"></span></div>
+<div class="c-dot" id="cdot" aria-hidden="true"></div>
+
+{% include "partials/header.njk" %}
+
+<main id="main" tabindex="-1">
+{{ content | safe }}
+{% if next %}{% include "partials/next.njk" %}{% endif %}
+</main>
+
+{% include "partials/footer.njk" %}
+
+<script src="/assets/js/vendor/gsap.min.js" defer></script>
+<script src="/assets/js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/js/vendor/lenis.min.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

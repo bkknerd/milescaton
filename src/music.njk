@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+title: Music
+permalink: /music/
+pageKey: music
+theme: cream
+eleventyComputed:
+  description: "{{ music.seo_description }}"
+next: { url: "/watch/", title: "Screening", italic: "room.", aside: "Videos" }
+---
+<section class="sb" id="sideb" data-theme="cream">
+  <div class="kick sm"><span>{{ music.label }}</span><span>{{ music.aside }} · {{ music.singles | length }} so far</span></div>
+  <div class="sb-head">
+    <h1>{{ music.title }} <span class="it" data-erode>{{ music.italic }}</span></h1>
+    <p>{{ music.intro }}</p>
+  </div>
+  {% if music.photo %}<figure class="sb-photo" data-cursor="Color">{% img music.photo, music.photo_alt, "", "100vw", 'id="sbimg"' %}{% if music.photo_caption %}<figcaption class="sm">{{ music.photo_caption }}</figcaption>{% endif %}</figure>{% endif %}
+  <ol class="sb-list">
+    {%- for s in music.singles %}
+    {%- set idx = loop.index0 %}
+    <li class="sb-item">
+      <button class="sb-row" type="button" aria-expanded="false" aria-controls="single-{{ loop.index }}" data-c="{{ s.color }}"{% if s.dark_label %} data-ink="1"{% endif %} data-name="{{ s.title }}">
+        <span class="no">{{ idx | roman }}.</span><span class="t">{{ s.title }}</span><span class="m sm"><b>{{ s.note }}</b>{{ s.date }} · <span class="sb-cta">Play</span></span>
+      </button>
+      <div class="sb-panel" id="single-{{ loop.index }}" hidden>
+        <div class="sb-panel-in">{% set ytId = s.youtube %}{% set ytList = s.playlist %}{% set ytTitle = s.title %}{% set ytSub = s.note + " · " + s.date %}{% set ytC = s.color %}{% set ytC2 = "#0b0908" %}{% include "partials/yt.njk" %}</div>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

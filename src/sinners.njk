@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+title: Sinners
+permalink: /sinners/
+pageKey: sinners
+theme: black
+eleventyComputed:
+  description: "{{ sinners.seo_description }}"
+next: { url: "/music/", title: "Side B", italic: "the music", aside: "Four singles" }
+---
+<section id="sammie" data-theme="black">
+  <div class="sm-title">
+    <div class="kick sm"><span>{{ sinners.label }}</span><span>{{ sinners.aside }}</span></div>
+    <h1 class="sm-h1"><span class="big-a"><span class="mask"><span class="rise">{{ sinners.title_a }}</span></span></span>
+    <span class="big-b"><span class="mask"><span class="rise" data-erode>{{ sinners.title_b }}</span></span></span></h1>
+    <div class="sm-sub">
+      <p>{{ sinners.logline }}</p>
+      <p class="tag sm">{{ sinners.tag | nl2br | safe }}</p>
+    </div>
+  </div>
+  <div class="dusk" id="dusk">
+    <div class="sky"><div class="sun" id="sun"></div></div>
+    <div class="horizon"></div>
+    <div class="sea"><div class="reflect" id="reflect"></div></div>
+    <div class="sky-dark" id="skydark"></div>
+    <div class="dusk-copy">
+      <div class="d1" id="d1"><span class="sm">{{ sinners.dusk.place }}</span><h2>{{ sinners.dusk.line | mdi | safe }}</h2></div>
+      <div class="d2" id="d2"><div class="sm">{{ sinners.dusk.song_label }}</div><h3 data-erode>{{ sinners.dusk.song_title | nl2br | safe }}</h3><p>{{ sinners.dusk.song_note }}</p></div>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fx wide rv"><p>{{ sinners.feature | mdi | safe }}</p></div>
+    {%- for st in sinners.stats %}
+    <div class="fx{% if loop.first %} off{% endif %} rv"><div class="n">{{ st.value }}{% if st.sup %}<sup>{{ st.sup }}</sup>{% endif %}</div><div class="k sm">{{ st.label }}</div></div>
+    {%- endfor %}
+  </div>
+  <div class="ost">
+    <div class="ost-h sm"><span>{{ sinners.soundtrack.label }}</span><span>{{ sinners.soundtrack.aside }}</span></div>
+    <ol class="ost-list">
+    {%- for t in sinners.soundtrack.tracks %}
+    <li class="ost-row{% if t.highlight %} cw{% endif %}" data-cursor="{{ 'Co-writer' if t.highlight else 'Vocals' }}"><span class="no sm" aria-hidden="true">A{{ loop.index }}</span><span class="t">{{ t.title }}</span><span class="r sm">{{ t.credit }}</span></li>
+    {%- endfor %}
+    </ol>
+  </div>
+</section>

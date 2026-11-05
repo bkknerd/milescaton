@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Watch
+permalink: /watch/
+pageKey: watch
+theme: black
+eleventyComputed:
+  description: "{{ videos.seo_description }}"
+next: { url: "/portraits/", title: "Contact", italic: "sheet.", aside: "Portraits" }
+---
+{%- set first = videos.reels[0] %}
+<section class="scr" id="screen" data-theme="black">
+  <div class="kick sm"><span>{{ videos.label }}</span><span>{{ videos.reels | length }} reels · {{ videos.aside }}</span></div>
+  <div class="scr-head">
+    <h1>{{ videos.title }} <span class="it" data-erode>{{ videos.italic }}</span></h1>
+    <p>{{ videos.intro }}</p>
+  </div>
+  <div class="scr-grid">
+    <div class="screen" id="screenEl" data-yt="{{ first.youtube }}" style="--tc:{{ first.color }};--tc2:{{ first.color2 }}">
+      <div class="tint" id="sTint"></div><canvas id="sNoise" aria-hidden="true"></canvas><div class="lines"></div><div class="vig"></div><div class="flick"></div>
+      <button class="inf" type="button" id="sPlay" data-cursor="Play" aria-label="Play {{ first.title }}">
+        <span class="top sm"><span id="sIdx">Reel 01 / {{ videos.reels | length | pad2 }}</span><span class="tc" id="sTc">00:00:00:00</span></span>
+        <span class="mid"><span><span class="s-h" id="sTitle">{{ first.title }}</span><span class="sub" id="sSub">{{ first.sub }}</span></span><span class="play" aria-hidden="true"><svg viewBox="0 0 20 24"><path d="M0 0 L20 12 L0 24 Z"/></svg></span></span>
+        <span class="top sm"><span id="sMeta">{{ first.meta }}</span><span>Press play</span></span>
+      </button>
+      <div class="s-frame" id="sFrame"></div>
+    </div>
+    <div>
+      <ol class="reel" id="reel">
+        {%- for r in videos.reels %}
+        <li><button type="button" class="reel-b{% if loop.first %} on{% endif %}" aria-pressed="{{ 'true' if loop.first else 'false' }}" data-cursor="Watch" data-yt="{{ r.youtube }}" data-t="{{ r.title }}" data-s="{{ r.sub }}" data-m="{{ r.meta }}" data-c="{{ r.color }}" data-c2="{{ r.color2 }}"><span class="n sm">{{ loop.index | pad2 }}</span><span><span class="tt">{{ r.title }}</span><span class="ds">{{ r.sub }}</span></span><span class="ry sm">{{ r.year }}</span></button></li>
+        {%- endfor %}
+      </ol>
+      <p class="scr-note sm"><a id="sOut" href="https://www.youtube.com/watch?v={{ first.youtube }}" target="_blank" rel="noopener">Open this reel on YouTube ↗</a></p>
+    </div>
+  </div>
+</section>

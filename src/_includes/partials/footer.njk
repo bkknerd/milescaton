@@ -1,0 +1,28 @@
+<footer class="ft" data-theme="black">
+  <div class="kick sm"><span>{{ site.footer.label }}</span><span>{{ site.footer.aside }}</span></div>
+  <div class="ft-top">
+    <div class="now"><p>{{ site.footer.now | mdi | safe }}</p></div>
+    {% if site.footer.photo %}<figure class="ft-pic" data-cursor="Color">{% img site.footer.photo, site.footer.photo_alt, "", "(max-width: 900px) 62vw, 16vw" %}</figure>{% endif %}
+    <ul class="ft-links sm">
+      {%- for l in site.footer.links %}
+      <li><a href="{{ l.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ l.label }} <span aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {% if site.footer.corrections.enabled %}
+  <form class="fix" name="corrections" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="fixForm">
+    <input type="hidden" name="form-name" value="corrections">
+    <p class="vh"><label>Leave this empty <input name="bot-field"></label></p>
+    <div class="fix-h"><h2>{{ site.footer.corrections.heading }}</h2><p>{{ site.footer.corrections.note }}</p></div>
+    <label class="fix-f fix-msg"><span class="sm">What needs fixing</span><textarea name="message" rows="2" required></textarea></label>
+    <label class="fix-f"><span class="sm">Email (optional)</span><input type="email" name="email" autocomplete="email"></label>
+    <button class="fix-b sm" type="submit" data-cursor="Send">Send it</button>
+    <p class="fix-done" role="status" aria-live="polite"></p>
+  </form>
+  {% endif %}
+  <div class="ft-word" id="ftword" aria-hidden="true"><span>{{ site.footer.word }}</span></div>
+  <div class="ft-base">
+    <p>{{ site.footer.disclaimer }}</p>
+    <a href="#main" class="sm totop" data-cursor="Top">Back to the top ↑</a>
+  </div>
+</footer>

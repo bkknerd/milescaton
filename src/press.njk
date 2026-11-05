@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+title: Press
+permalink: /press/
+pageKey: press
+theme: cream
+eleventyComputed:
+  description: "{{ press.seo_description }}"
+next: { url: "/story/", title: "From the", italic: "beginning.", aside: "The story" }
+---
+{%- set items = press.items | sortPress %}
+<section class="pr" id="press" data-theme="cream">
+  <div class="kick sm"><span>{{ press.label }}</span><span>{{ items | length }} stories · {{ press.aside }}</span></div>
+  <div class="pr-head">
+    <h1>{{ press.title }} <span class="it" data-erode>{{ press.italic }}</span></h1>
+    <p>{{ press.intro }}</p>
+  </div>
+
+  {%- set feats = items | onlyFeatured %}
+  {% if feats | length %}
+  <ul class="pr-feat">
+    {%- for it in feats %}
+    <li><a class="pf" href="{{ it.url }}" target="_blank" rel="noopener" data-cursor="Read">
+      <span class="pf-o">{{ it.outlet }}</span>
+      <span class="pf-t">{{ it.title }}</span>
+      <span class="pf-m sm"><span>{{ it | pressDate }}{% if it.note %} · {{ it.note }}{% endif %}</span><span>{{ it.kind }} ↗</span></span>
+      <span class="vh"> (opens in a new tab)</span>
+    </a></li>
+    {%- endfor %}
+  </ul>
+  {% endif %}
+
+  <div class="pr-filter" role="group" aria-label="Filter press by type">
+    <button type="button" class="pr-chip sm" aria-pressed="true" data-k="all">All</button>
+    {%- for k in items | uniqKinds %}<button type="button" class="pr-chip sm" aria-pressed="false" data-k="{{ k }}">{{ k }}</button>{% endfor %}
+  </div>
+
+  <ol class="pr-list" id="prList">
+    {%- for it in items %}
+    {%- set y = it | pressYear %}
+    {%- if loop.first or (items[loop.index0 - 1] | pressYear) != y %}<li class="pr-year sm" data-year="{{ y }}"><span>{{ y }}</span></li>{% endif %}
+    <li class="pr-item" data-k="{{ it.kind }}"><a class="pr-row" href="{{ it.url }}" target="_blank" rel="noopener" data-cursor="Read">
+      <span class="pr-d sm">{{ it | pressDate }}</span>
+      <span class="pr-o">{{ it.outlet }}</span>
+      <span class="pr-t">{{ it.title }}{% if it.note %} <span class="pr-n">— {{ it.note }}</span>{% endif %}</span>
+      <span class="pr-k sm">{{ it.kind }} ↗</span>
+      <span class="vh"> (opens in a new tab)</span>
+    </a></li>
+    {%- endfor %}
+  </ol>
+  <p class="pr-empty sm" id="prEmpty" hidden>Nothing in this category yet.</p>
+</section>

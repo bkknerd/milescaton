@@ -1,0 +1,55 @@
+{
+  "seo_description": "Portraits of Miles Caton, presented as a contact sheet.",
+  "label": "Portraits",
+  "aside": "One roll",
+  "title": "Contact",
+  "italic": "sheet.",
+  "intro": "Portraits under the safelight. Each frame develops as it rolls past. Open any frame to see it full size.",
+  "frames": [
+    {
+      "image": "/img/cs-window.jpg",
+      "caption": "Window light",
+      "alt": "Black-and-white portrait of Miles Caton by a window"
+    },
+    {
+      "image": "/img/cs-camera.jpg",
+      "caption": "Behind the camera",
+      "alt": "Miles Caton holding a vintage film camera"
+    },
+    {
+      "image": "/img/cs-suede.jpg",
+      "caption": "Suede",
+      "alt": "Studio portrait of Miles Caton on a green backdrop"
+    },
+    {
+      "image": "/img/portrait-wide.jpg",
+      "caption": "Steel and tweed",
+      "alt": "Miles Caton in a tweed suit"
+    },
+    {
+      "image": "/img/cs-denim.jpg",
+      "caption": "Workwear",
+      "alt": "Studio portrait of Miles Caton in a denim jacket"
+    },
+    {
+      "image": "/img/cs-kneel.jpg",
+      "caption": "Take two",
+      "alt": "Miles Caton kneeling with a film camera"
+    },
+    {
+      "image": "/img/pinstripe.jpg",
+      "caption": "Pinstripe",
+      "alt": "Miles Caton in a pinstripe suit on a red carpet"
+    },
+    {
+      "image": "/img/stage.jpg",
+      "caption": "In conversation",
+      "alt": "Miles Caton on stage with a microphone"
+    },
+    {
+      "image": "/img/editorial.jpg",
+      "caption": "Staircase",
+      "alt": "Miles Caton leaning on a marble staircase"
+    }
+  ]
+}

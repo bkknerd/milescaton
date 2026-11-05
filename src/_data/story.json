@@ -1,0 +1,75 @@
+{
+  "title": "The record",
+  "italic": "so far.",
+  "intro": "From a Brooklyn choir loft to the Oscars stage, one year at a time. Keep scrolling and the record moves sideways.",
+  "seo_description": "Miles Caton's story year by year, from gospel roots and a viral 'Feeling Good' to Sinners, the Oscars and Columbia Records.",
+  "opener": {
+    "headline": "Raised in the",
+    "italic": "choir loft.",
+    "text": "His mother and his aunt are lifelong gospel singers. Everything that follows started there."
+  },
+  "entries": [
+    {
+      "year": "2010",
+      "age": "Age 5",
+      "title": "Sam Cooke at the gala",
+      "body": "On stage at an NAACP Freedom Fund awards gala in New York, singing a Sam Cooke song at five years old.",
+      "key": false
+    },
+    {
+      "year": "2017",
+      "age": "Age 12",
+      "title": "“Feeling Good” goes viral",
+      "body": "His cover of the Nina Simone standard gets sampled in the opening montage of Jay-Z's “4:44” video.",
+      "key": true
+    },
+    {
+      "year": "2018",
+      "age": "Age 13",
+      "title": "*Little Big Shots,* twice",
+      "body": "“For Every Mountain” on the season three premiere, then “O Holy Night” for the NBC holiday special.",
+      "key": false
+    },
+    {
+      "year": "2019",
+      "age": "Age 13",
+      "title": "Live on *The View*",
+      "body": "“Never Give Up” on Martin Luther King Jr. Day, sung alongside Yolanda Adams.",
+      "key": false
+    },
+    {
+      "year": "2022",
+      "age": "Age 17",
+      "title": "On the road with H.E.R.",
+      "body": "A tour first, then he came home and finished high school.",
+      "key": true
+    },
+    {
+      "year": "2023",
+      "age": "Age 18",
+      "title": "“This Ain't It”",
+      "body": "His debut single. He directed the music video himself.",
+      "key": false
+    },
+    {
+      "year": "2025",
+      "age": "Age 20",
+      "title": "*Sinners*",
+      "body": "His first feature. He plays Sammie Moore opposite Michael B. Jordan, and gets a Critics' Choice win for it.",
+      "key": true,
+      "image": "/img/premiere.jpg",
+      "caption": "World premiere, with Michael B. Jordan",
+      "alt": "Miles Caton with Michael B. Jordan at the Sinners world premiere"
+    },
+    {
+      "year": "2026",
+      "age": "Age 21",
+      "title": "The Oscars, then Columbia",
+      "body": "A BAFTA Rising Star nomination, then “I Lied to You” live at the Oscars. In March he signs with Columbia and puts out “Don't Hate Me”; “Lean On” follows in August.",
+      "key": false,
+      "image": "/img/critics-choice.jpg",
+      "caption": "Critics' Choice, Best Young Performer",
+      "alt": "Miles Caton accepting the Critics' Choice award for Best Young Performer"
+    }
+  ]
+}

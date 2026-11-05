@@ -1,0 +1,84 @@
+{
+  "seo_description": "Every honor from Miles Caton's Sinners awards season: Critics' Choice, NAACP Image Awards, BAFTA and more.",
+  "label": "Honors",
+  "aside": "One awards season",
+  "intro": "Every honor from one awards season, solo and shared with the *Sinners* cast.",
+  "marquee_a": [
+    "Best Young Performer",
+    "Outstanding Breakthrough",
+    "Rising Star",
+    "Best Youth Performance",
+    "Ensemble Tribute",
+    "Best Supporting Actor"
+  ],
+  "marquee_b": [
+    "Critics' Choice",
+    "NAACP Image Awards",
+    "The Actor Awards",
+    "BAFTA",
+    "Gotham Awards",
+    "SCAD Savannah",
+    "Saturn Awards"
+  ],
+  "won": [
+    {
+      "body": "Critics' Choice Awards",
+      "category": "Best Young Performer"
+    },
+    {
+      "body": "NAACP Image Awards",
+      "category": "Outstanding Breakthrough Performance, Motion Picture"
+    },
+    {
+      "body": "The Actor Awards",
+      "category": "Outstanding Performance by a Cast"
+    },
+    {
+      "body": "Gotham Awards",
+      "category": "Ensemble Tribute"
+    },
+    {
+      "body": "SCAD Savannah Film Festival",
+      "category": "Rising Star"
+    },
+    {
+      "body": "Washington D.C. Area Film Critics",
+      "category": "Best Youth Performance"
+    },
+    {
+      "body": "Astra Midseason Movie Awards",
+      "category": "Best Supporting Actor"
+    },
+    {
+      "body": "Michigan Movie Critics Guild",
+      "category": "Breakthrough"
+    },
+    {
+      "body": "New York Film Critics Online",
+      "category": "Best Ensemble Cast"
+    }
+  ],
+  "nominated": [
+    {
+      "body": "BAFTA · 2026",
+      "category": "EE Rising Star Award"
+    },
+    {
+      "body": "The Actor Awards",
+      "category": "Male Actor in a Supporting Role"
+    },
+    {
+      "body": "NAACP Image Awards",
+      "category": "Supporting Actor, Motion Picture"
+    },
+    {
+      "body": "Saturn Awards",
+      "category": "Best Young Performer in a Film"
+    },
+    {
+      "body": "World Soundtrack Awards",
+      "category": "Best Original Song — “I Lied to You”"
+    }
+  ],
+  "footnote": "He was also on both **Variety**'s and **TIME**'s actors-to-watch lists."
+}

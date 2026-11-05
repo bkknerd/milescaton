@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+title: The story
+permalink: /story/
+pageKey: story
+theme: black
+eleventyComputed:
+  description: "{{ story.seo_description }}"
+next: { url: "/sinners/", title: "Sinners", italic: "as Sammie", aside: "The role" }
+---
+<section class="phead" data-theme="black">
+  <div class="kick sm"><span>The story</span><span>{{ story.entries | length }} years on record</span></div>
+  <h1 class="phead-t">{{ story.title }} <span class="it" data-erode>{{ story.italic }}</span></h1>
+  <p class="phead-p">{{ story.intro }}</p>
+</section>
+<section class="hs" id="record" data-theme="black" aria-label="Timeline">
+  <div class="hs-head sm" aria-hidden="true"><span>The record so far</span><span class="hs-hint">Keep scrolling →</span></div>
+  <div class="track" id="track">
+    <div class="pnl intro">
+      <h2>{{ story.opener.headline }} <span class="it" data-erode>{{ story.opener.italic }}</span></h2>
+      <p>{{ story.opener.text }}</p>
+    </div>
+    {%- for e in story.entries %}
+    <article class="pnl{% if e.key %} key{% endif %}{% if e.image %} has-pic{% endif %}">
+      {% if e.age %}<span class="age sm">{{ e.age }}</span>{% endif %}
+      <div class="yr" aria-hidden="true">{{ e.year }}</div>
+      {% if e.image %}<figure class="pfig">{% img e.image, e.alt, "", "(max-width: 820px) 84vw, 30vw" %}{% if e.caption %}<figcaption class="sm">{{ e.caption }}</figcaption>{% endif %}</figure>{% endif %}
+      <div class="txt"><h3><span class="vh">{{ e.year }}: </span>{{ e.title | mdi | safe }}</h3><p>{{ e.body }}</p></div>
+    </article>
+    {%- endfor %}
+  </div>
+  <div class="hs-bar" aria-hidden="true"><i id="hsbar"></i></div>
+</section>

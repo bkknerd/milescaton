@@ -1,0 +1,70 @@
+{
+  "seo_description": "Miles Caton as Samuel “Sammie” Moore in Ryan Coogler's Sinners: the role, the guitar and the soundtrack.",
+  "label": "The role",
+  "aside": "Sinners · Warner Bros. · 2025",
+  "title_a": "Samuel",
+  "title_b": "“Sammie” Moore",
+  "logline": "A preacher's son with a blues guitar, caught between his father's church and his cousins' new juke joint, where his playing calls up something nobody invited. It was his first feature, and he plays it opposite Michael B. Jordan.",
+  "tag": "a.k.a. “Preacherboy”\nDirected by Ryan Coogler",
+  "dusk": {
+    "place": "Mississippi Delta · 1932",
+    "line": "One night. One juke joint. And a kid whose guitar could *bend time.*",
+    "song_label": "He co-wrote it",
+    "song_title": "Last Time\n(I Seen the Sun)",
+    "song_note": "One of five soundtrack songs he sings on."
+  },
+  "feature": "He learned guitar for the role. On screen he plays a *resonator,* and he recorded a substantial share of the acoustic guitar on the soundtrack.",
+  "stats": [
+    {
+      "value": "16",
+      "sup": "",
+      "label": "Oscar nominations — the most for any film in Academy history"
+    },
+    {
+      "value": "$360",
+      "sup": "M+",
+      "label": "Worldwide box office"
+    },
+    {
+      "value": "5",
+      "sup": "th",
+      "label": "Highest-grossing horror film of all time"
+    },
+    {
+      "value": "01",
+      "sup": "",
+      "label": "Biggest opening for an original R-rated film this decade"
+    }
+  ],
+  "soundtrack": {
+    "label": "Sammie on the soundtrack",
+    "aside": "Five cuts",
+    "tracks": [
+      {
+        "title": "This Little Light of Mine",
+        "credit": "Performer",
+        "highlight": false
+      },
+      {
+        "title": "Travelin'",
+        "credit": "Performer",
+        "highlight": false
+      },
+      {
+        "title": "Juke",
+        "credit": "Performer",
+        "highlight": false
+      },
+      {
+        "title": "I Lied to You",
+        "credit": "World Soundtrack Awards nominee",
+        "highlight": false
+      },
+      {
+        "title": "Last Time (I Seen the Sun)",
+        "credit": "Co-writer · Performer",
+        "highlight": true
+      }
+    ]
+  }
+}

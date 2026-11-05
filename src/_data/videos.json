@@ -1,0 +1,73 @@
+{
+  "seo_description": "Watch Miles Caton: official videos, the Oscars, his Tiny Desk with Buddy Guy, live sets and the early days.",
+  "label": "Screening room",
+  "aside": "Press play",
+  "title": "Screening",
+  "italic": "room.",
+  "intro": "Official videos, live sets and the early days. Pick a reel and it plays right here.",
+  "reels": [
+    {
+      "title": "Lean On",
+      "sub": "Official music video",
+      "meta": "Columbia · Aug 2026",
+      "year": "2026",
+      "youtube": "TPvGrWa3iWA",
+      "color": "#a3170b",
+      "color2": "#f0a23a"
+    },
+    {
+      "title": "Don't Hate Me",
+      "sub": "Official video · dir. Geoff Sean Levy",
+      "meta": "Columbia · Mar 2026",
+      "year": "2026",
+      "youtube": "2vL_PUOl6sA",
+      "color": "#3a2a22",
+      "color2": "#a3170b"
+    },
+    {
+      "title": "I Lied to You",
+      "sub": "Live at the 98th Oscars, with Raphael Saadiq",
+      "meta": "Academy Awards · Mar 2026",
+      "year": "2026",
+      "youtube": "4dWV3LBEcEk",
+      "color": "#f0a23a",
+      "color2": "#7e1108"
+    },
+    {
+      "title": "Tiny Desk",
+      "sub": "With Buddy Guy: “Travelin'” and “I Lied to You”",
+      "meta": "NPR Music · Feb 2026",
+      "year": "2026",
+      "youtube": "m5XxOLdMSS8",
+      "color": "#5a4a3c",
+      "color2": "#f0a23a"
+    },
+    {
+      "title": "Somethin (Live)",
+      "sub": "Live performance · Open Mic",
+      "meta": "Live · 2025",
+      "year": "2025",
+      "youtube": "OvH4FCL39dM",
+      "color": "#7e1108",
+      "color2": "#e2d5b8"
+    },
+    {
+      "title": "Somethin",
+      "sub": "Official visualizer · independent single",
+      "meta": "Independent · 2025",
+      "year": "2025",
+      "youtube": "Ocx5VZtVFHI",
+      "color": "#a3170b",
+      "color2": "#3a2a22"
+    },
+    {
+      "title": "Never Give Up",
+      "sub": "With Yolanda Adams on The View, MLK Day",
+      "meta": "ABC · Jan 2019 · age 13",
+      "year": "2019",
+      "youtube": "G2b6anX6XcM",
+      "color": "#e2d5b8",
+      "color2": "#a3170b"
+    }
+  ]
+}

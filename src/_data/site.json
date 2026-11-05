@@ -1,0 +1,74 @@
+{
+  "name": "Miles Caton",
+  "tagline": "a fan record",
+  "title": "Miles Caton — Fan Record",
+  "description": "An unofficial fan site for Miles Caton: singer, actor, and Sammie Moore in Ryan Coogler's Sinners.",
+  "url": "https://milescaton-fan.netlify.app",
+  "og_image": "/img/og.jpg",
+  "nav": [
+    {
+      "label": "Story",
+      "url": "/story/"
+    },
+    {
+      "label": "Sinners",
+      "url": "/sinners/"
+    },
+    {
+      "label": "Music",
+      "url": "/music/"
+    },
+    {
+      "label": "Watch",
+      "url": "/watch/"
+    },
+    {
+      "label": "Portraits",
+      "url": "/portraits/"
+    },
+    {
+      "label": "Honors",
+      "url": "/honors/"
+    },
+    {
+      "label": "Press",
+      "url": "/press/"
+    }
+  ],
+  "loader": {
+    "enabled": true,
+    "label": "Tuning — open D"
+  },
+  "footer": {
+    "label": "Right now",
+    "aside": "Fall 2026",
+    "now": "“Lean On” is out on Columbia. No new screen role has been announced yet, so for now *the music is the story.*",
+    "photo": "/img/editorial.jpg",
+    "photo_alt": "Editorial portrait of Miles Caton",
+    "word": "Preacherboy",
+    "links": [
+      {
+        "label": "Biography",
+        "url": "https://en.wikipedia.org/wiki/Miles_Caton"
+      },
+      {
+        "label": "IMDb",
+        "url": "https://www.imdb.com/name/nm10416836/"
+      },
+      {
+        "label": "BAFTA Rising Star",
+        "url": "https://www.bafta.org/people/miles-caton/"
+      },
+      {
+        "label": "THR interview",
+        "url": "https://www.hollywoodreporter.com/movies/movie-features/miles-caton-sinners-music-goals-oscars-interview-1236508141/"
+      }
+    ],
+    "corrections": {
+      "enabled": true,
+      "heading": "Spotted something out of date?",
+      "note": "Tell us and we'll fix it. Your email is optional."
+    },
+    "disclaimer": "This is an unofficial, non-commercial fan site. It isn't affiliated with or endorsed by Miles Caton, his team, Columbia Records or Warner Bros. Photographs belong to their photographers; rights holders can request credit or removal."
+  }
+}

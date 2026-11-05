@@ -1,0 +1,49 @@
+{
+  "seo_description": "Miles Caton's singles, from his debut “This Ain't It” to “Lean On” on Columbia. Press play on any of them.",
+  "label": "Side B",
+  "aside": "The singles",
+  "title": "Side",
+  "italic": "B.",
+  "intro": "He was a singer before he was an actor. These are the singles so far: R&B and soul, with a lot of church still in them. Tap any one to play it here.",
+  "photo": "/img/portrait-wide.jpg",
+  "photo_alt": "Portrait of Miles Caton in a tailored suit",
+  "photo_caption": "Portrait",
+  "singles": [
+    {
+      "title": "This Ain't It",
+      "note": "Debut",
+      "date": "2023",
+      "color": "#f1e7d0",
+      "dark_label": true,
+      "youtube": "",
+      "playlist": "OLAK5uy_lAEsrFmxxmUEav_PDOFLwaxVOWXCGPeXY"
+    },
+    {
+      "title": "Somethin",
+      "note": "Independent",
+      "date": "07.31.2025",
+      "color": "#a3170b",
+      "dark_label": false,
+      "youtube": "Ocx5VZtVFHI",
+      "playlist": ""
+    },
+    {
+      "title": "Don't Hate Me",
+      "note": "Columbia debut",
+      "date": "03.20.2026",
+      "color": "#f0a23a",
+      "dark_label": false,
+      "youtube": "",
+      "playlist": "OLAK5uy_mP2euq2n00x--maPcehJLy7XJJtkOi7nY"
+    },
+    {
+      "title": "Lean On",
+      "note": "Latest",
+      "date": "08.21.2026",
+      "color": "#5a4a3c",
+      "dark_label": false,
+      "youtube": "TPvGrWa3iWA",
+      "playlist": ""
+    }
+  ]
+}

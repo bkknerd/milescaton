@@ -1,0 +1,113 @@
+{
+  "seo_description": "",
+  "hero": {
+    "first": "Miles",
+    "last": "Caton",
+    "photo": "/img/hero-red.jpg",
+    "photo_alt": "Miles Caton in a red suit at the Sinners world premiere",
+    "meta_left": "Singer · Actor\nBrooklyn, N.Y. — b. 2005",
+    "meta_center": "Six strings, tuned to open D.\nRun your cursor across them.",
+    "strings": true
+  },
+  "show_overture": true,
+  "overture": {
+    "label": "Overture",
+    "aside": "Unofficial fan site",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "He was singing in church at *two.* At twelve, a video of him singing Nina Simone opened a **Jay-Z** video. At seventeen he was on tour with **H.E.R.**"
+      },
+      {
+        "type": "photo",
+        "image": "/img/stage.jpg",
+        "focus": "40% 45%"
+      },
+      {
+        "type": "text",
+        "text": "Then Ryan Coogler handed him a guitar — and made him the *beating heart*"
+      },
+      {
+        "type": "photo",
+        "image": "/img/pinstripe.jpg",
+        "focus": "50% 25%"
+      },
+      {
+        "type": "text",
+        "text": "of a film that set the record for Oscar nominations."
+      }
+    ],
+    "link_label": "Read the whole story",
+    "link_url": "/story/"
+  },
+  "show_now": true,
+  "now": {
+    "label": "Now playing",
+    "aside": "Latest single",
+    "kicker": "Columbia Records · August 21, 2026",
+    "title": "Lean On",
+    "italic": "out now.",
+    "text": "His newest single, and the fullest his sound has been: soul front to back, with the church still in it.",
+    "youtube": "TPvGrWa3iWA",
+    "more_label": "All the music",
+    "more_url": "/music/"
+  },
+  "show_chapters": true,
+  "chapters": {
+    "label": "Chapters",
+    "aside": "Six rooms",
+    "items": [
+      {
+        "title": "The record so far",
+        "italic": "",
+        "url": "/story/",
+        "blurb": "Gospel roots to the Oscars stage, year by year.",
+        "image": "/img/premiere.jpg"
+      },
+      {
+        "title": "Sinners",
+        "italic": "as Sammie",
+        "url": "/sinners/",
+        "blurb": "The role, the guitar, the song he co-wrote.",
+        "image": "/img/hero-red.jpg"
+      },
+      {
+        "title": "Side B",
+        "italic": "the music",
+        "url": "/music/",
+        "blurb": "Four singles. Press play on any of them.",
+        "image": "/img/portrait-wide.jpg"
+      },
+      {
+        "title": "Screening room",
+        "italic": "",
+        "url": "/watch/",
+        "blurb": "Official videos, live sets, the early days.",
+        "image": "/img/stage.jpg"
+      },
+      {
+        "title": "Contact sheet",
+        "italic": "portraits",
+        "url": "/portraits/",
+        "blurb": "Eight frames under the safelight.",
+        "image": "/img/cs-window.jpg"
+      },
+      {
+        "title": "Honors",
+        "italic": "",
+        "url": "/honors/",
+        "blurb": "One awards season, written down.",
+        "image": "/img/critics-choice.jpg"
+      }
+    ]
+  },
+  "show_honors_strip": true,
+  "show_press": true,
+  "press": {
+    "label": "In the press",
+    "aside": "Latest",
+    "count": 3,
+    "more_label": "All press",
+    "more_url": "/press/"
+  }
+}

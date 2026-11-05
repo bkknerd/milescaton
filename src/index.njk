@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+theme: red
+pageKey: home
+eleventyComputed:
+  description: "{{ home.seo_description or site.description }}"
+jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton — a fan record","about":{"@type":"Person","name":"Miles Caton","birthDate":"2005-03-03","birthPlace":"Brooklyn, New York","jobTitle":["Singer","Actor"],"sameAs":["https://en.wikipedia.org/wiki/Miles_Caton","https://www.imdb.com/name/nm10416836/"]}}'
+---
+{%- set h = home.hero %}
+<section class="hero" id="top" data-theme="red" aria-label="{{ h.first }} {{ h.last }}">
+  <h1 class="h-name" id="hname" aria-label="{{ h.first }} {{ h.last }}">{% for c in h.first | chars %}<span class="mask" aria-hidden="true"><span class="L">{{ c }}</span></span>{% endfor %}</h1>
+  <div class="h-cat" aria-hidden="true"><span class="mask"><span id="caton" data-erode>{{ h.last }}</span></span></div>
+  {% if h.photo %}<figure class="h-photo" id="hphoto">{% img h.photo, h.photo_alt, "", "(max-width: 820px) 58vw, 16vw", 'fetchpriority="high"' %}</figure>{% endif %}
+  {% if h.strings %}<canvas class="strings" id="strings" aria-hidden="true"></canvas><div class="nut" id="nut" aria-hidden="true"></div>{% endif %}
+  <div class="h-meta">
+    <p class="sm">{{ h.meta_left | nl2br | safe }}</p>
+    {% if h.strings %}<p class="c sm">{{ h.meta_center | nl2br | safe }}</p>{% endif %}
+    <a class="r sm" href="#after-hero" data-link>Scroll <span class="arrow" aria-hidden="true">↓</span></a>
+  </div>
+</section>
+<span id="after-hero"></span>
+
+{% if home.show_overture %}
+<section class="ov" id="overture" data-theme="cream">
+  <div class="kick sm"><span>{{ home.overture.label }}</span><span>{{ home.overture.aside }}</span></div>
+  <p class="ov-text" id="ovtext">{% for b in home.overture.blocks %}{% if b.type == "photo" %} <span class="pic" style="--fp:{{ b.focus or '50% 30%' }}">{% img b.image, "", "", "160px" %}</span> {% else %}{{ b.text | mdi | safe }} {% endif %}{% endfor %}</p>
+  {% if home.overture.link_url %}<a class="ov-link sm" href="{{ home.overture.link_url }}" data-cursor="Read">{{ home.overture.link_label }} →</a>{% endif %}
+</section>
+{% endif %}
+
+{% if home.show_now %}{% set n = home.now %}
+<section class="nowp" id="now" data-theme="black">
+  <div class="kick sm"><span>{{ n.label }}</span><span>{{ n.aside }}</span></div>
+  <div class="nowp-grid">
+    <div class="nowp-copy">
+      <p class="sm nowp-k">{{ n.kicker }}</p>
+      <h2 class="nowp-t">{{ n.title }}{% if n.italic %} <span class="it" data-erode>{{ n.italic }}</span>{% endif %}</h2>
+      <p class="nowp-p">{{ n.text }}</p>
+      {% if n.more_url %}<a class="btn sm" href="{{ n.more_url }}" data-cursor="Open">{{ n.more_label }} →</a>{% endif %}
+    </div>
+    <div class="nowp-vid">{% set ytId = n.youtube %}{% set ytList = "" %}{% set ytTitle = n.title %}{% set ytSub = n.kicker %}{% set ytC = "#a3170b" %}{% set ytC2 = "#f0a23a" %}{% include "partials/yt.njk" %}</div>
+  </div>
+</section>
+{% endif %}
+
+{% if home.show_chapters %}
+<section class="chs" id="chapters" data-theme="cream">
+  <div class="kick sm"><span>{{ home.chapters.label }}</span><span>{{ home.chapters.aside }}</span></div>
+  <ol class="ch-list">
+    {%- for c in home.chapters.items %}
+    <li><a class="ch-row" href="{{ c.url }}" data-i="{{ loop.index0 }}" data-cursor="Enter">
+      <span class="ch-t"><span class="ch-a">{{ c.title }}</span>{% if c.italic %} <span class="ch-b">{{ c.italic }}</span>{% endif %}</span>
+      <span class="ch-d">{{ c.blurb }}</span>
+      <span class="ch-arrow" aria-hidden="true">→</span>
+    </a></li>
+    {%- endfor %}
+  </ol>
+  <div class="ch-float" id="chFloat" aria-hidden="true">{% for c in home.chapters.items %}<figure data-i="{{ loop.index0 }}">{% img c.image, "", "", "320px" %}</figure>{% endfor %}</div>
+</section>
+{% endif %}
+
+{% if home.show_press %}{% set latest = press.items | sortPress | take(home.press.count or 3) %}
+<section class="prs" id="home-press" data-theme="cream">
+  <div class="kick sm"><span>{{ home.press.label }}</span><span>{{ home.press.aside }}</span></div>
+  <ol class="pr-list">
+    {%- for it in latest %}
+    <li class="pr-item"><a class="pr-row" href="{{ it.url }}" target="_blank" rel="noopener" data-cursor="Read">
+      <span class="pr-d sm">{{ it | pressDate }}</span><span class="pr-o">{{ it.outlet }}</span><span class="pr-t">{{ it.title }}</span><span class="pr-k sm">{{ it.kind }} ↗</span><span class="vh"> (opens in a new tab)</span>
+    </a></li>
+    {%- endfor %}
+  </ol>
+  <a class="btn sm prs-more" href="{{ home.press.more_url }}" data-cursor="Open">{{ home.press.more_label }} →</a>
+</section>
+{% endif %}
+
+{% if home.show_honors_strip %}
+<section class="hon hon-strip" data-theme="red" aria-label="Honors">
+  <div class="mq a" aria-hidden="true"><div class="mq-in" data-dir="-1">{% for m in honors.marquee_a %}<span>{{ m }}</span>{% endfor %}</div></div>
+  <div class="mq b" aria-hidden="true"><div class="mq-in" data-dir="1">{% for m in honors.marquee_b %}<span>{{ m }}</span>{% endfor %}</div></div>
+  <div class="hs-cta"><p>{{ honors.won | length }} wins and {{ honors.nominated | length }} nominations from one awards season.</p><a class="btn sm" href="/honors/" data-cursor="Open">See every honor →</a></div>
+</section>
+{% endif %}

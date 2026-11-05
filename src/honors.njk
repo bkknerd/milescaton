@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+title: Honors
+permalink: /honors/
+pageKey: honors
+theme: red
+eleventyComputed:
+  description: "{{ honors.seo_description }}"
+next: { url: "/press/", title: "Press", italic: "on the record.", aside: "Coverage" }
+---
+{%- set total = (honors.won | length) + (honors.nominated | length) %}
+<section class="hon" id="honors" data-theme="red">
+  <div class="kick sm wrapx"><span>{{ honors.label }}</span><span>{{ honors.aside }}</span></div>
+  <div class="hon-head">
+    <h1 class="n"><span id="honN" data-count="{{ total }}">{{ total }}</span><span class="vh"> honors</span></h1>
+    <p>{{ honors.intro | mdi | safe }}</p>
+  </div>
+  <div class="mq a" aria-hidden="true"><div class="mq-in" data-dir="-1">{% for m in honors.marquee_a %}<span>{{ m }}</span>{% endfor %}</div></div>
+  <div class="mq b" aria-hidden="true"><div class="mq-in" data-dir="1">{% for m in honors.marquee_b %}<span>{{ m }}</span>{% endfor %}</div></div>
+  <div class="hon-list">
+    <div class="hl won"><h2 class="sm"><span>Won</span><span>{{ honors.won | length | pad2 }}</span></h2>
+      <ul>{% for a in honors.won %}<li><span>{{ a.body }}</span><span>{{ a.category }}</span></li>{% endfor %}</ul></div>
+    <div class="hl nom"><h2 class="sm"><span>Nominated</span><span>{{ honors.nominated | length | pad2 }}</span></h2>
+      <ul>{% for a in honors.nominated %}<li><span>{{ a.body }}</span><span>{{ a.category }}</span></li>{% endfor %}</ul></div>
+    {% if honors.footnote %}<p class="hon-foot">{{ honors.footnote | mdi | safe }}</p>{% endif %}
+  </div>
+</section>

@@ -1,0 +1,21 @@
+<header class="hdr" id="hdr">
+  <a href="/" class="wm" aria-label="{{ site.name }} — home"><b>{{ site.name }}</b><i>{{ site.tagline }}</i></a>
+  <nav class="nav sm" aria-label="Main">
+    {%- for item in site.nav %}
+    <a href="{{ item.url }}"{% if item.url | isCurrent(page.url) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+  <div class="hdr-r">
+    <button class="snd sm" id="snd" type="button" aria-pressed="false" aria-label="Guitar string sound" data-cursor="Strings"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="sndt">Sound off</span></button>
+    <button class="menu-btn sm" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span class="mb-l">Menu</span><span class="mb-x" aria-hidden="true"><i></i><i></i></span></button>
+  </div>
+</header>
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menu">
+    <a href="/" class="mi"{% if page.url == '/' %} aria-current="page"{% endif %}><span class="mi-t">Home</span></a>
+    {%- for item in site.nav %}
+    <a href="{{ item.url }}" class="mi"{% if item.url | isCurrent(page.url) %} aria-current="page"{% endif %}><span class="mi-t">{{ item.label }}</span></a>
+    {%- endfor %}
+  </nav>
+  <p class="menu-foot sm">{{ site.name }} · {{ site.tagline }} · unofficial</p>
+</div>
