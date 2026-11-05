@@ -1,6 +1,6 @@
-# Miles Caton — a fan record
+# Miles Caton
 
-An unofficial fan site built with **Eleventy** (static site generator) and **Decap CMS** (the open-source successor to Netlify CMS). Every word, photo, link, video and award on the site is editable at `/admin` without touching code.
+**Decap CMS** (the open-source successor to Netlify CMS). Every word, photo, link, video and award on the site is editable at `/admin` without touching code.
 
 ## Pages
 
