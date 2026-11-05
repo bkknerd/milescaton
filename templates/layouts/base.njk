@@ -10,7 +10,7 @@
 <link rel="canonical" href="{{ page.url | absUrl(site.url) }}">
 <meta name="theme-color" content="#a3170b">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="{{ site.name }} — {{ site.tagline }}">
+<meta property="og:site_name" content="{{ site.name }}{% if site.tagline %} — {{ site.tagline }}{% endif %}">
 <meta property="og:title" content="{{ pageTitle }}">
 <meta property="og:description" content="{{ pageDesc }}">
 <meta property="og:url" content="{{ page.url | absUrl(site.url) }}">

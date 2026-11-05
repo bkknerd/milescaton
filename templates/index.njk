@@ -4,7 +4,7 @@ theme: red
 pageKey: home
 computed:
   description: "{{ home.seo_description or site.description }}"
-jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton — a fan record","about":{"@type":"Person","name":"Miles Caton","birthDate":"2005-03-03","birthPlace":"Brooklyn, New York","jobTitle":["Singer","Actor"],"sameAs":["https://en.wikipedia.org/wiki/Miles_Caton","https://www.imdb.com/name/nm10416836/"]}}'
+jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton","about":{"@type":"Person","name":"Miles Caton","birthDate":"2005-03-03","birthPlace":"Brooklyn, New York","jobTitle":["Singer","Actor"],"sameAs":["https://en.wikipedia.org/wiki/Miles_Caton","https://www.imdb.com/name/nm10416836/"]}}'
 ---
 {%- set h = home.hero %}
 <section class="hero" id="top" data-theme="red" aria-label="{{ h.first }} {{ h.last }}">

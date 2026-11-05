@@ -31,7 +31,7 @@ collections:
         file: "content/site.json"
         fields:
           - { label: "Site name", name: name, widget: string }
-          - { label: "Tagline (next to the name)", name: tagline, widget: string }
+          - { label: "Tagline (next to the name, optional)", name: tagline, widget: string, required: false }
           - { label: "Browser title", name: title, widget: string }
           - { label: "Search description", name: description, widget: text }
           - { label: "Live site address", name: url, widget: string, hint: "e.g. https://milescaton-fan.netlify.app — used for share links" }
