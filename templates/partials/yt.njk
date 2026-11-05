@@ -1,5 +1,7 @@
-{#- expects: ytId, ytList, ytTitle, ytSub, ytC, ytC2 -#}
-<div class="yt" data-yt="{{ ytId }}" data-list="{{ ytList }}" data-title="{{ ytTitle }}" style="--tc:{{ ytC or '#a3170b' }};--tc2:{{ ytC2 or '#f0a23a' }}">
+{#- expects: ytId, ytList, ytTitle, ytSub, ytC, ytC2, ytThumb (optional video ID for the poster) -#}
+{%- set thumbId = ytThumb or ytId %}
+<div class="yt{% if thumbId %} has-th{% endif %}" data-yt="{{ ytId }}" data-list="{{ ytList }}" data-title="{{ ytTitle }}" style="--tc:{{ ytC or '#a3170b' }};--tc2:{{ ytC2 or '#f0a23a' }}">
+  {% if thumbId %}<img class="th" src="https://i.ytimg.com/vi/{{ thumbId }}/maxresdefault.jpg" data-fb="https://i.ytimg.com/vi/{{ thumbId }}/hqdefault.jpg" alt="" loading="lazy" decoding="async" onload="if(this.naturalWidth<=120&&this.dataset.fb){this.src=this.dataset.fb;this.removeAttribute('data-fb')}" onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.removeAttribute('data-fb')}else{this.remove()}">{% endif %}
   <div class="tint"></div><div class="lines"></div><div class="vig"></div>
   <button class="yt-play" type="button" data-cursor="Play" aria-label="Play {{ ytTitle }}">
     <span class="yt-t">{{ ytTitle }}</span>{% if ytSub %}<span class="yt-s">{{ ytSub }}</span>{% endif %}

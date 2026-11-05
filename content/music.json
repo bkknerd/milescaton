@@ -16,7 +16,8 @@
       "color": "#f1e7d0",
       "dark_label": true,
       "youtube": "",
-      "playlist": "OLAK5uy_lAEsrFmxxmUEav_PDOFLwaxVOWXCGPeXY"
+      "playlist": "OLAK5uy_lAEsrFmxxmUEav_PDOFLwaxVOWXCGPeXY",
+      "thumb": ""
     },
     {
       "title": "Somethin",
@@ -25,7 +26,8 @@
       "color": "#a3170b",
       "dark_label": false,
       "youtube": "Ocx5VZtVFHI",
-      "playlist": ""
+      "playlist": "",
+      "thumb": ""
     },
     {
       "title": "Don't Hate Me",
@@ -34,7 +36,8 @@
       "color": "#f0a23a",
       "dark_label": false,
       "youtube": "",
-      "playlist": "OLAK5uy_mP2euq2n00x--maPcehJLy7XJJtkOi7nY"
+      "playlist": "OLAK5uy_mP2euq2n00x--maPcehJLy7XJJtkOi7nY",
+      "thumb": "2vL_PUOl6sA"
     },
     {
       "title": "Lean On",
@@ -43,7 +46,8 @@
       "color": "#5a4a3c",
       "dark_label": false,
       "youtube": "TPvGrWa3iWA",
-      "playlist": ""
+      "playlist": "",
+      "thumb": ""
     }
   ]
 }

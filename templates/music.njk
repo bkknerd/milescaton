@@ -23,7 +23,7 @@ next: { url: "/watch/", title: "Screening", italic: "room.", aside: "Videos" }
         <span class="no">{{ idx | roman }}.</span><span class="t">{{ s.title }}</span><span class="m sm"><b>{{ s.note }}</b>{{ s.date }} · <span class="sb-cta">Play</span></span>
       </button>
       <div class="sb-panel" id="single-{{ loop.index }}" hidden>
-        <div class="sb-panel-in">{% set ytId = s.youtube %}{% set ytList = s.playlist %}{% set ytTitle = s.title %}{% set ytSub = s.note + " · " + s.date %}{% set ytC = s.color %}{% set ytC2 = "#0b0908" %}{% include "partials/yt.njk" %}</div>
+        <div class="sb-panel-in">{% set ytId = s.youtube %}{% set ytList = s.playlist %}{% set ytThumb = s.thumb %}{% set ytTitle = s.title %}{% set ytSub = s.note + " · " + s.date %}{% set ytC = s.color %}{% set ytC2 = "#0b0908" %}{% include "partials/yt.njk" %}</div>
       </div>
     </li>
     {%- endfor %}

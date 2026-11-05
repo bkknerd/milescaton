@@ -262,6 +262,7 @@
       sPlay.setAttribute('aria-label', 'Play ' + b.dataset.t);
       scrEl.style.setProperty('--tc', b.dataset.c); scrEl.style.setProperty('--tc2', b.dataset.c2);
       sOut.href = 'https://www.youtube.com/watch?v=' + b.dataset.yt; erode(sT, RESTORE, 55);
+      var th = $('#sThumb'); if (th) { var base = 'https://i.ytimg.com/vi/' + b.dataset.yt + '/'; th.dataset.fb = base + 'hqdefault.jpg'; th.src = base + 'maxresdefault.jpg'; }
     };
     var playScreen = function () { sFrame.innerHTML = ''; sFrame.appendChild(makeFrame(scrEl.dataset.yt, '', sT.textContent)); scrEl.classList.add('playing'); };
     sPlay.addEventListener('click', playScreen);
@@ -269,6 +270,7 @@
       b.addEventListener('pointerenter', function () { if (!scrEl.classList.contains('playing')) cue(b); });
       b.addEventListener('click', function () { cue(b); playScreen(); if (innerWidth < 900) scrollToEl(scrEl); });
     });
+    if ('requestIdleCallback' in window) requestIdleCallback(function () { reelBtns.forEach(function (b) { var im = new Image(); im.src = 'https://i.ytimg.com/vi/' + b.dataset.yt + '/maxresdefault.jpg'; }); });
     if (nc) { nc.width = 160; nc.height = 100; nimg = nx.createImageData(160, 100); }
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { screenVisible = es[0].isIntersecting; }).observe(scrEl);
   }

@@ -721,3 +721,13 @@ html.menu-open .hdr{background:transparent;transform:none;-webkit-backdrop-filte
 .ft-end .credit{color:rgba(241,231,208,.72);transition:color .3s}
 .ft-end .credit:hover,.ft-end .credit:focus-visible{color:var(--amber)}
 @media (max-width:820px){.ft-end{align-items:flex-start;margin-left:0;text-align:left}}
+
+/* video thumbnails: YouTube poster, tinted to the page palette, full colour on hover */
+.yt .th,.screen .th{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:grayscale(1) contrast(1.08) brightness(.72);transform:scale(1.02);transition:filter .7s,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.yt.has-th .tint,.screen.has-th .tint{mix-blend-mode:color;opacity:.95;transition:opacity .7s,background .6s}
+.yt.has-th::after,.screen.has-th::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(11,9,8,.82) 0%,rgba(11,9,8,.2) 45%,rgba(11,9,8,0) 70%,rgba(11,9,8,.35) 100%)}
+.yt.has-th:hover .th,.yt.has-th:focus-within .th,.screen.has-th:hover .th{filter:none;transform:scale(1.04)}
+.yt.has-th:hover .tint,.yt.has-th:focus-within .tint,.screen.has-th:hover .tint{opacity:.25}
+.screen.has-th canvas{opacity:.1}
+.yt.playing .th,.yt.playing::after{display:none}
+html.rm .th{transition:none;transform:none}

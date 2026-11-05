@@ -16,7 +16,8 @@ next: { url: "/portraits/", title: "Contact", italic: "sheet.", aside: "Portrait
     <p>{{ videos.intro }}</p>
   </div>
   <div class="scr-grid">
-    <div class="screen" id="screenEl" data-yt="{{ first.youtube }}" style="--tc:{{ first.color }};--tc2:{{ first.color2 }}">
+    <div class="screen has-th" id="screenEl" data-yt="{{ first.youtube }}" style="--tc:{{ first.color }};--tc2:{{ first.color2 }}">
+      <img class="th" id="sThumb" src="https://i.ytimg.com/vi/{{ first.youtube }}/maxresdefault.jpg" data-fb="https://i.ytimg.com/vi/{{ first.youtube }}/hqdefault.jpg" alt="" decoding="async" onload="if(this.naturalWidth<=120&&this.dataset.fb){this.src=this.dataset.fb;this.removeAttribute('data-fb')}" onerror="if(this.dataset.fb){this.src=this.dataset.fb;this.removeAttribute('data-fb')}">
       <div class="tint" id="sTint"></div><canvas id="sNoise" aria-hidden="true"></canvas><div class="lines"></div><div class="vig"></div><div class="flick"></div>
       <button class="inf" type="button" id="sPlay" data-cursor="Play" aria-label="Play {{ first.title }}">
         <span class="top sm"><span id="sIdx">Reel 01 / {{ videos.reels | length | pad2 }}</span><span class="tc" id="sTc">00:00:00:00</span></span>

@@ -278,6 +278,7 @@ collections:
               - { label: "Dark text on the record label", name: dark_label, widget: boolean, default: false }
               - { label: "YouTube video ID", name: youtube, widget: string, required: false, hint: "Use this OR a playlist ID" }
               - { label: "YouTube playlist ID", name: playlist, widget: string, required: false, hint: "The part after list= — e.g. OLAK5uy_..." }
+              - { label: "Thumbnail (video ID)", name: thumb, widget: string, required: false, hint: "Optional. Which video's YouTube thumbnail to show. Leave empty to use the video above; playlists need one or they show the colour card" }
 
       - name: videos
         label: "Watch (videos)"
