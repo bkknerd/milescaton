@@ -1,19 +1,22 @@
-# Decap CMS (formerly Netlify CMS) — edits the JSON files in src/_data.
+# Decap CMS (formerly Netlify CMS) — edits the JSON files in /content.
 # Writing tips shown to editors:
 #   *single asterisks* = italic   **double asterisks** = condensed caps style
 
 backend:
-  name: git-gateway
+  name: github
+  repo: bkknerd/milescaton
   branch: main
+  # Sign-in goes through Netlify's GitHub OAuth (Site settings → Access & security → OAuth → GitHub).
+  # Every save is a commit to this repo, and Netlify redeploys the site.
 
-# Run `npx decap-server` alongside `npm start` to edit locally without logging in.
+# Test the editor on your machine: run `npm run cms` and `npm start` together, then open localhost:8080/admin/.
 local_backend: true
 
 site_url: https://milescaton-fan.netlify.app
 display_url: https://milescaton-fan.netlify.app
 logo_url: /assets/admin-logo.svg
 
-media_folder: "src/img/uploads"
+media_folder: "img/uploads"
 public_folder: "/img/uploads"
 
 collections:
@@ -25,7 +28,7 @@ collections:
     files:
       - name: site
         label: "Site, menu and footer"
-        file: "src/_data/site.json"
+        file: "content/site.json"
         fields:
           - { label: "Site name", name: name, widget: string }
           - { label: "Tagline (next to the name)", name: tagline, widget: string }
@@ -78,7 +81,7 @@ collections:
     files:
       - name: home
         label: "Homepage"
-        file: "src/_data/home.json"
+        file: "content/home.json"
         fields:
           - { label: "Search description (optional)", name: seo_description, widget: text, required: false }
           - label: "Hero"
@@ -173,7 +176,7 @@ collections:
     files:
       - name: story
         label: "Story (timeline)"
-        file: "src/_data/story.json"
+        file: "content/story.json"
         fields:
           - { label: "Title", name: title, widget: string }
           - { label: "Title (italic part)", name: italic, widget: string }
@@ -202,7 +205,7 @@ collections:
 
       - name: sinners
         label: "Sinners"
-        file: "src/_data/sinners.json"
+        file: "content/sinners.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }
@@ -246,7 +249,7 @@ collections:
 
       - name: music
         label: "Music (singles)"
-        file: "src/_data/music.json"
+        file: "content/music.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }
@@ -272,7 +275,7 @@ collections:
 
       - name: videos
         label: "Watch (videos)"
-        file: "src/_data/videos.json"
+        file: "content/videos.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }
@@ -295,7 +298,7 @@ collections:
 
       - name: portraits
         label: "Portraits"
-        file: "src/_data/portraits.json"
+        file: "content/portraits.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }
@@ -314,7 +317,7 @@ collections:
 
       - name: press
         label: "Press"
-        file: "src/_data/press.json"
+        file: "content/press.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }
@@ -339,7 +342,7 @@ collections:
 
       - name: honors
         label: "Honors"
-        file: "src/_data/honors.json"
+        file: "content/honors.json"
         fields:
           - { label: "Search description", name: seo_description, widget: text }
           - { label: "Label", name: label, widget: string }

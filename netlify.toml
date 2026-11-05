@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "_site"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -43,4 +43,10 @@
 [[redirects]]
   from = "/screen"
   to = "/watch/"
+  status = 301
+
+# /admin without the slash goes to the editor.
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
   status = 301

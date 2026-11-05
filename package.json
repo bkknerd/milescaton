@@ -1,17 +1,18 @@
 {
-  "name": "miles-caton-fan-record",
-  "version": "1.0.0",
+  "name": "miles-caton-site",
   "private": true,
-  "description": "Unofficial fan site for Miles Caton — Eleventy + Decap CMS, built for Netlify.",
+  "description": "Unofficial Miles Caton fan site. Content lives in /content and is edited at /admin.",
+  "type": "module",
   "scripts": {
-    "start": "eleventy --serve --quiet",
-    "build": "eleventy",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs --serve",
     "cms": "npx decap-server"
   },
-  "engines": { "node": ">=18" },
-  "devDependencies": {
-    "@11ty/eleventy": "^3.1.8",
-    "@11ty/eleventy-img": "^7.1.1",
-    "markdown-it": "^15.0.0"
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "markdown-it": "14.1.0",
+    "nunjucks": "3.2.4",
+    "sharp": "0.34.4",
+    "yaml": "2.8.1"
   }
 }
