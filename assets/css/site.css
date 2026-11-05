@@ -745,4 +745,4 @@ html.rm .th{transition:none;transform:none}
 .hon{padding-bottom:var(--head)}
 .hon + .next,.hon ~ .next{padding-top:var(--head);border-top:1px solid rgba(241,231,208,.18)}
 .hl h2{display:flex;gap:.9em;align-items:baseline}
-.hl h2 span+span{opacity:.6}
+.hl h2 span+span{opacity:1}
