@@ -731,3 +731,18 @@ html.menu-open .hdr{background:transparent;transform:none;-webkit-backdrop-filte
 .screen.has-th canvas{opacity:.1}
 .yt.playing .th,.yt.playing::after{display:none}
 html.rm .th{transition:none;transform:none}
+
+/* hero: phone + tablet — name and photo fill the top of the screen */
+@media (max-width:820px){
+  .h-name{top:max(76px,11%)}
+  .h-cat{top:calc(max(76px,11%) + var(--fit,24vw)*.55)}
+  .h-photo{height:58%}
+}
+/* footer form: both fields the same height so the labels line up */
+.fix-f textarea,.fix-f input{line-height:1.4;height:calc(1.4em + 17px);min-height:calc(1.4em + 17px)}
+.fix-f textarea{resize:none;overflow:hidden}
+/* honors: red section runs straight into the red next-chapter block, so drop the double gap */
+.hon{padding-bottom:var(--head)}
+.hon + .next,.hon ~ .next{padding-top:var(--head);border-top:1px solid rgba(241,231,208,.18)}
+.hl h2{display:flex;gap:.9em;align-items:baseline}
+.hl h2 span+span{opacity:.6}

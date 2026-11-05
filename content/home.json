@@ -55,7 +55,7 @@
   "show_chapters": true,
   "chapters": {
     "label": "Chapters",
-    "aside": "Six rooms",
+    "aside": "Seven rooms",
     "items": [
       {
         "title": "The record so far",
@@ -89,7 +89,7 @@
         "title": "Contact sheet",
         "italic": "portraits",
         "url": "/portraits/",
-        "blurb": "Eight frames under the safelight.",
+        "blurb": "Nine frames under the safelight.",
         "image": "/img/cs-window.jpg"
       },
       {
@@ -98,6 +98,13 @@
         "url": "/honors/",
         "blurb": "One awards season, written down.",
         "image": "/img/critics-choice.jpg"
+      },
+      {
+        "title": "Press",
+        "italic": "on the record",
+        "url": "/press/",
+        "blurb": "Interviews, features and the big performances.",
+        "image": "/img/cs-camera.jpg"
       }
     ]
   },

@@ -188,7 +188,7 @@
     fw.style.setProperty('--ffit', (100 * (innerWidth - 2 * padL) / w2) + 'px'); fw.style.fontVariationSettings = prev;
   }
   function catonFlick() { var n = performance.now(); if (n - lastEr > 420) { lastEr = n; erode(caton, ['1', '2', '3', '1'], 55); } if (hph) { hph.classList.add('lit'); clearTimeout(litT); litT = setTimeout(function () { hph.classList.remove('lit'); }, 650); } }
-  var ys = [0.33, 0.43, 0.53, 0.63, 0.73, 0.83], thick = [2.4, 2, 1.7, 1.35, 1.1, 0.85], names = ['D', 'A', 'D', 'F♯', 'A', 'D'];
+  var ys = matchMedia('(max-width: 820px)').matches ? [0.2, 0.3, 0.4, 0.5, 0.6, 0.7] : [0.33, 0.43, 0.53, 0.63, 0.73, 0.83], thick = [2.4, 2, 1.7, 1.35, 1.1, 0.85], names = ['D', 'A', 'D', 'F♯', 'A', 'D'];
   function sizeStrings() { if (!cv) return; var r = hero.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   function pluck(s, px, v) { s.a = Math.max(s.a, (10 + 18 * v) * (1 - s.i * 0.06)); s.t = 0; s.px = Math.min(0.92, Math.max(0.08, px)); play(s.i, v); catonFlick(); }
   if (cv) {
@@ -385,7 +385,7 @@
     if (mqs.length && !reduce) {
       var vel = 0;
       mqs.forEach(function (m) { if (m.dir > 0) m.x = -m.el.scrollWidth / 2; });
-      gsap.ticker.add(function () { var v = lenis ? lenis.velocity || 0 : 0; vel += (v - vel) * 0.1; mqs.forEach(function (m) { var half = m.el.scrollWidth / 2; m.x += m.dir * (0.6 + Math.abs(vel) * 0.35); if (m.x < -half) m.x += half; if (m.x > 0) m.x -= half; m.el.style.transform = 'translateX(' + m.x + 'px) skewX(' + (-vel * 0.25 * m.dir).toFixed(2) + 'deg)'; }); });
+      gsap.ticker.add(function () { var v = lenis ? lenis.velocity || 0 : 0; vel += (v - vel) * 0.1; mqs.forEach(function (m) { var half = m.el.scrollWidth / 2; m.x += m.dir * (0.6 + Math.min(Math.abs(vel), 40) * 0.2); if (m.x < -half) m.x += half; if (m.x > 0) m.x -= half; m.el.style.transform = 'translateX(' + m.x + 'px) skewX(' + Math.max(-4, Math.min(4, -vel * 0.12 * m.dir)).toFixed(2) + 'deg)'; }); });
     }
     if ($('#ftword') && !reduce) gsap.fromTo('#ftword', { fontVariationSettings: '"wdth" 68, "wght" 900' }, { fontVariationSettings: '"wdth" 150, "wght" 900', ease: 'none', scrollTrigger: { trigger: '.ft-word', start: 'top bottom', end: 'bottom 85%', scrub: 0.6 } });
   }
