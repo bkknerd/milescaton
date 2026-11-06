@@ -27,7 +27,7 @@ next: { url: "/honors/", title: "Honors", italic: "", aside: "" }
   <div class="lb-stage" id="lbStage">
     {%- for f in portraits.frames %}<figure class="lb-f" data-i="{{ loop.index0 }}" hidden>{% img f.image, f.alt, "", "90vw" %}<figcaption class="sm"><span>{{ f.caption }}</span></figcaption></figure>{% endfor %}
   </div>
-  <button class="lb-x sm" type="button" id="lbClose" data-cursor="Close">Close ✕</button>
-  <button class="lb-n lb-prev sm" type="button" id="lbPrev" aria-label="Previous photo" data-cursor="Prev">←</button>
-  <button class="lb-n lb-next sm" type="button" id="lbNext" aria-label="Next photo" data-cursor="Next">→</button>
+  <button class="lb-x sm" type="button" id="lbClose" data-cursor="Close">Close<span class="ar" aria-hidden="true"> <span class="ar" aria-hidden="true">✕</span></span></button>
+  <button class="lb-n lb-prev sm" type="button" id="lbPrev" aria-label="Previous photo" data-cursor="Prev"><span class="ar" aria-hidden="true">←</span><span class="ar-t">Previous</span></button>
+  <button class="lb-n lb-next sm" type="button" id="lbNext" aria-label="Next photo" data-cursor="Next"><span class="ar" aria-hidden="true">→</span><span class="ar-t">Next</span></button>
 </dialog>

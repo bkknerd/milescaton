@@ -32,7 +32,7 @@ next: { url: "/portraits/", title: "Photos", italic: "", aside: "" }
         <li><button type="button" class="reel-b{% if loop.first %} on{% endif %}" aria-pressed="{{ 'true' if loop.first else 'false' }}" data-cursor="Watch" data-yt="{{ r.youtube }}" data-t="{{ r.title }}" data-s="{{ r.sub }}" data-m="{{ r.meta }}" data-c="{{ r.color }}" data-c2="{{ r.color2 }}"><span class="n sm">{{ loop.index | pad2 }}</span><span><span class="tt">{{ r.title }}</span><span class="ds">{{ r.sub }}</span></span><span class="ry sm">{{ r.year }}</span></button></li>
         {%- endfor %}
       </ol>
-      <p class="scr-note sm"><a id="sOut" href="https://www.youtube.com/watch?v={{ first.youtube }}" target="_blank" rel="noopener">Watch on YouTube ↗</a></p>
+      <p class="scr-note sm"><a id="sOut" href="https://www.youtube.com/watch?v={{ first.youtube }}" target="_blank" rel="noopener">Watch on YouTube <span class="ar" aria-hidden="true">↗</span></a></p>
     </div>
   </div>
 </section>

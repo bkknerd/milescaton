@@ -835,3 +835,11 @@ html{font-synthesis:none}
 @property --wipe{syntax:"<percentage>";inherits:true;initial-value:160%}
 
 .kick>span:empty{display:none}
+
+/* arrows: phones draw several of these as emoji, so drop them on small and touch screens */
+.ar-t{display:none}
+@media (max-width:820px),(hover:none){
+  .ar{display:none!important}
+  .ar-t{display:inline}
+  .lb-n{width:auto;height:auto;padding:10px 18px;border-radius:999px;font-size:15px}
+}

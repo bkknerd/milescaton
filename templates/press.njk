@@ -23,7 +23,7 @@ next: { url: "/story/", title: "Story", italic: "", aside: "" }
     <li><a class="pf" href="{{ it.url }}" target="_blank" rel="noopener" data-cursor="Read">
       <span class="pf-o">{{ it.outlet }}</span>
       <span class="pf-t">{{ it.title }}</span>
-      <span class="pf-m sm"><span>{{ it | pressDate }}{% if it.note %} · {{ it.note }}{% endif %}</span><span>{{ it.kind }} ↗</span></span>
+      <span class="pf-m sm"><span>{{ it | pressDate }}{% if it.note %} · {{ it.note }}{% endif %}</span><span>{{ it.kind }} <span class="ar" aria-hidden="true">↗</span></span></span>
       <span class="vh"> (opens in a new tab)</span>
     </a></li>
     {%- endfor %}
@@ -43,7 +43,7 @@ next: { url: "/story/", title: "Story", italic: "", aside: "" }
       <span class="pr-d sm">{{ it | pressDate }}</span>
       <span class="pr-o">{{ it.outlet }}</span>
       <span class="pr-t">{{ it.title }}{% if it.note %} <span class="pr-n">— {{ it.note }}</span>{% endif %}</span>
-      <span class="pr-k sm">{{ it.kind }} ↗</span>
+      <span class="pr-k sm">{{ it.kind }} <span class="ar" aria-hidden="true">↗</span></span>
       <span class="vh"> (opens in a new tab)</span>
     </a></li>
     {%- endfor %}

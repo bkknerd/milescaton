@@ -5,7 +5,7 @@
     {% if site.footer.photo %}<figure class="ft-pic" data-cursor="View">{% img site.footer.photo, site.footer.photo_alt, "", "(max-width: 900px) 62vw, 16vw" %}</figure>{% endif %}
     <ul class="ft-links sm">
       {%- for l in site.footer.links %}
-      <li><a href="{{ l.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ l.label }} <span aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a></li>
+      <li><a href="{{ l.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ l.label }} <span class="ar" aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a></li>
       {%- endfor %}
     </ul>
   </div>
@@ -24,9 +24,9 @@
   <div class="ft-base">
     <p>{{ site.footer.disclaimer }}</p>
     <div class="ft-end sm">
-      <a href="#main" class="totop" data-cursor="Top">Back to the top ↑</a>
+      <a href="#main" class="totop" data-cursor="Top">Back to the top <span class="ar" aria-hidden="true">↑</span></a>
       {%- if site.footer.credit and site.footer.credit.label %}
-      <a class="credit" href="{{ site.footer.credit.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ site.footer.credit.label }} <span aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a>
+      <a class="credit" href="{{ site.footer.credit.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ site.footer.credit.label }} <span class="ar" aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a>
       {%- endif %}
     </div>
   </div>

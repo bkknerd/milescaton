@@ -19,7 +19,7 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
   <div class="h-meta">
     <p class="sm">{{ h.meta_left | nl2br | safe }}</p>
     {% if h.strings %}<p class="c sm">{{ h.meta_center | nl2br | safe }}</p>{% endif %}
-    <a class="r sm" href="#after-hero" data-link>Scroll <span class="arrow" aria-hidden="true">↓</span></a>
+    <a class="r sm" href="#after-hero" data-link>Scroll <span class="arrow ar" aria-hidden="true">↓</span></a>
   </div>
 </section>
 <span id="after-hero"></span>
@@ -28,7 +28,7 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
 <section class="ov" id="overture" data-theme="cream">
   <div class="kick sm"><span>{{ home.overture.label }}</span><span>{{ home.overture.aside }}</span></div>
   <p class="ov-text" id="ovtext">{% for b in home.overture.blocks %}{% if b.type == "photo" %} <span class="pic" style="--fp:{{ b.focus or '50% 30%' }}">{% img b.image, "", "", "160px" %}</span> {% else %}{{ b.text | mdi | safe }} {% endif %}{% endfor %}</p>
-  {% if home.overture.link_url %}<a class="ov-link sm" href="{{ home.overture.link_url }}" data-cursor="Read">{{ home.overture.link_label }} →</a>{% endif %}
+  {% if home.overture.link_url %}<a class="ov-link sm" href="{{ home.overture.link_url }}" data-cursor="Read">{{ home.overture.link_label }} <span class="ar" aria-hidden="true">→</span></a>{% endif %}
 </section>
 {% endif %}
 
@@ -40,7 +40,7 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
       <p class="sm nowp-k">{{ n.kicker }}</p>
       <h2 class="nowp-t hd-slab">{{ n.title }}{% if n.italic %} <span class="it">{{ n.italic }}</span>{% endif %}</h2>
       <p class="nowp-p">{{ n.text }}</p>
-      {% if n.more_url %}<a class="btn sm" href="{{ n.more_url }}" data-cursor="Open">{{ n.more_label }} →</a>{% endif %}
+      {% if n.more_url %}<a class="btn sm" href="{{ n.more_url }}" data-cursor="Open">{{ n.more_label }} <span class="ar" aria-hidden="true">→</span></a>{% endif %}
     </div>
     <div class="nowp-vid">{% set ytId = n.youtube %}{% set ytList = "" %}{% set ytThumb = "" %}{% set ytTitle = n.title %}{% set ytSub = n.kicker %}{% set ytC = "#a3170b" %}{% set ytC2 = "#f0a23a" %}{% include "partials/yt.njk" %}</div>
   </div>
@@ -55,7 +55,7 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
     <li><a class="ch-row" href="{{ c.url }}" data-i="{{ loop.index0 }}" data-cursor="Enter">
       <span class="ch-t"><span class="ch-a">{{ c.title }}</span>{% if c.italic %} <span class="ch-b">{{ c.italic }}</span>{% endif %}</span>
       <span class="ch-d">{{ c.blurb }}</span>
-      <span class="ch-arrow" aria-hidden="true">→</span>
+      <span class="ch-arrow ar" aria-hidden="true">→</span>
     </a></li>
     {%- endfor %}
   </ol>
@@ -69,11 +69,11 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
   <ol class="pr-list">
     {%- for it in latest %}
     <li class="pr-item"><a class="pr-row" href="{{ it.url }}" target="_blank" rel="noopener" data-cursor="Read">
-      <span class="pr-d sm">{{ it | pressDate }}</span><span class="pr-o">{{ it.outlet }}</span><span class="pr-t">{{ it.title }}</span><span class="pr-k sm">{{ it.kind }} ↗</span><span class="vh"> (opens in a new tab)</span>
+      <span class="pr-d sm">{{ it | pressDate }}</span><span class="pr-o">{{ it.outlet }}</span><span class="pr-t">{{ it.title }}</span><span class="pr-k sm">{{ it.kind }} <span class="ar" aria-hidden="true">↗</span></span><span class="vh"> (opens in a new tab)</span>
     </a></li>
     {%- endfor %}
   </ol>
-  <a class="btn sm prs-more" href="{{ home.press.more_url }}" data-cursor="Open">{{ home.press.more_label }} →</a>
+  <a class="btn sm prs-more" href="{{ home.press.more_url }}" data-cursor="Open">{{ home.press.more_label }} <span class="ar" aria-hidden="true">→</span></a>
 </section>
 {% endif %}
 
@@ -81,6 +81,6 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
 <section class="hon hon-strip" data-theme="red" aria-label="Honors">
   <div class="mq a" aria-hidden="true"><div class="mq-in" data-dir="-1">{% for m in honors.marquee_a %}<span>{{ m }}</span>{% endfor %}</div></div>
   <div class="mq b" aria-hidden="true"><div class="mq-in" data-dir="1">{% for m in honors.marquee_b %}<span>{{ m }}</span>{% endfor %}</div></div>
-  <div class="hs-cta"><p>{{ honors.won | length }} wins and {{ honors.nominated | length }} nominations for <em>Sinners</em>.</p><a class="btn sm" href="/honors/" data-cursor="Open">All honors →</a></div>
+  <div class="hs-cta"><p>{{ honors.won | length }} wins and {{ honors.nominated | length }} nominations for <em>Sinners</em>.</p><a class="btn sm" href="/honors/" data-cursor="Open">All honors <span class="ar" aria-hidden="true">→</span></a></div>
 </section>
 {% endif %}
