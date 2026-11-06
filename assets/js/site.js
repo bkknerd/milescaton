@@ -259,7 +259,7 @@
       reelBtns.forEach(function (x) { x.classList.toggle('on', x === b); x.setAttribute('aria-pressed', x === b); });
       var i = reelBtns.indexOf(b) + 1;
       scrEl.dataset.yt = b.dataset.yt; sT.textContent = b.dataset.t; sS.textContent = b.dataset.s; sM.textContent = b.dataset.m;
-      sI.textContent = 'Reel ' + String(i).padStart(2, '0') + ' / ' + String(reelBtns.length).padStart(2, '0');
+      sI.textContent = String(i).padStart(2, '0') + ' / ' + String(reelBtns.length).padStart(2, '0');
       sPlay.setAttribute('aria-label', 'Play ' + b.dataset.t);
       scrEl.style.setProperty('--tc', b.dataset.c); scrEl.style.setProperty('--tc2', b.dataset.c2);
       sOut.href = 'https://www.youtube.com/watch?v=' + b.dataset.yt; erode(sT, RESTORE, 55);

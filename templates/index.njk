@@ -81,6 +81,6 @@ jsonld: '{"@context":"https://schema.org","@type":"WebSite","name":"Miles Caton"
 <section class="hon hon-strip" data-theme="red" aria-label="Honors">
   <div class="mq a" aria-hidden="true"><div class="mq-in" data-dir="-1">{% for m in honors.marquee_a %}<span>{{ m }}</span>{% endfor %}</div></div>
   <div class="mq b" aria-hidden="true"><div class="mq-in" data-dir="1">{% for m in honors.marquee_b %}<span>{{ m }}</span>{% endfor %}</div></div>
-  <div class="hs-cta"><p>{{ honors.won | length }} wins and {{ honors.nominated | length }} nominations from one awards season.</p><a class="btn sm" href="/honors/" data-cursor="Open">See every honor →</a></div>
+  <div class="hs-cta"><p>{{ honors.won | length }} wins and {{ honors.nominated | length }} nominations for <em>Sinners</em>.</p><a class="btn sm" href="/honors/" data-cursor="Open">All honors →</a></div>
 </section>
 {% endif %}

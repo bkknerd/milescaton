@@ -6,11 +6,11 @@ pageKey: press
 theme: cream
 computed:
   description: "{{ press.seo_description }}"
-next: { url: "/story/", title: "From the", italic: "beginning.", aside: "The story" }
+next: { url: "/story/", title: "Story", italic: "", aside: "" }
 ---
 {%- set items = press.items | sortPress %}
 <section class="pr" id="press" data-theme="cream">
-  <div class="kick sm"><span>{{ press.label }}</span><span>{{ items | length }} stories · {{ press.aside }}</span></div>
+  <div class="kick sm"><span>{{ press.label }}</span><span>{{ items | length }} stories{% if press.aside %} · {{ press.aside }}{% endif %}</span></div>
   <div class="pr-head">
     <h1 class="hd-slab">{{ press.title }} <span class="it">{{ press.italic }}</span></h1>
     <p>{{ press.intro }}</p>

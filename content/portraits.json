@@ -1,10 +1,10 @@
 {
-  "seo_description": "Portraits of Miles Caton, presented as a contact sheet.",
-  "label": "Portraits",
-  "aside": "One roll",
-  "title": "Contact",
-  "italic": "sheet.",
-  "intro": "Portraits under the safelight. Each frame develops as it rolls past. Open any frame to see it full size.",
+  "seo_description": "Portraits of Miles Caton.",
+  "label": "Photos",
+  "aside": "",
+  "title": "Photos",
+  "italic": "",
+  "intro": "Nine portraits. Select any photo to see it full size.",
   "frames": [
     {
       "image": "/img/cs-window.jpg",

@@ -833,3 +833,5 @@ html{font-synthesis:none}
 .h-sig .sig{height:100%;--wipe:160%;clip-path:polygon(0 0,var(--wipe) 0,calc(var(--wipe) - 55%) 100%,0 100%)}
 @media (max-width:820px){.h-sig{top:max(70px,9%);height:52%;transform:translateX(-50%)}.wm .sig{height:48px;margin:-10px 0 -12px}}
 @property --wipe{syntax:"<percentage>";inherits:true;initial-value:160%}
+
+.kick>span:empty{display:none}

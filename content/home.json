@@ -6,17 +6,17 @@
     "photo": "/img/hero-red.jpg",
     "photo_alt": "Miles Caton in a red suit at the Sinners world premiere",
     "meta_left": "Singer · Actor\nBrooklyn, N.Y. — b. 2005",
-    "meta_center": "Six strings, tuned to open D.\nRun your cursor across them.",
+    "meta_center": "Drag across the strings to play them.",
     "strings": true
   },
   "show_overture": true,
   "overture": {
-    "label": "Overture",
+    "label": "About",
     "aside": "Unofficial fan site",
     "blocks": [
       {
         "type": "text",
-        "text": "He was singing in church at *two.* At twelve, a video of him singing Nina Simone opened a **Jay-Z** video. At seventeen he was on tour with **H.E.R.**"
+        "text": "He was singing in church at two. At twelve, his cover of Nina Simone's “Feeling Good” opened a **Jay-Z** video. At seventeen he toured with **H.E.R.**"
       },
       {
         "type": "photo",
@@ -25,7 +25,7 @@
       },
       {
         "type": "text",
-        "text": "Then Ryan Coogler handed him a guitar — and made him the *beating heart*"
+        "text": "At twenty, Ryan Coogler cast him as Sammie in"
       },
       {
         "type": "photo",
@@ -34,76 +34,76 @@
       },
       {
         "type": "text",
-        "text": "of a film that set the record for Oscar nominations."
+        "text": "*Sinners,* the film that set the record for Oscar nominations."
       }
     ],
-    "link_label": "Read the whole story",
+    "link_label": "Read his story",
     "link_url": "/story/"
   },
   "show_now": true,
   "now": {
-    "label": "Now playing",
-    "aside": "Latest single",
+    "label": "Latest single",
+    "aside": "Out now",
     "kicker": "Columbia Records · August 21, 2026",
     "title": "Lean On",
-    "italic": "out now.",
-    "text": "His newest single, and the fullest his sound has been: soul front to back, with the church still in it.",
+    "italic": "",
+    "text": "His second single for Columbia Records, after “Don't Hate Me” in March.",
     "youtube": "TPvGrWa3iWA",
-    "more_label": "All the music",
+    "more_label": "All singles",
     "more_url": "/music/"
   },
   "show_chapters": true,
   "chapters": {
-    "label": "Chapters",
-    "aside": "Seven rooms",
+    "label": "On this site",
+    "aside": "",
     "items": [
       {
-        "title": "The record so far",
+        "title": "Story",
         "italic": "",
         "url": "/story/",
-        "blurb": "Gospel roots to the Oscars stage, year by year.",
+        "blurb": "His career year by year, from church to the Oscars.",
         "image": "/img/premiere.jpg"
       },
       {
         "title": "Sinners",
-        "italic": "as Sammie",
+        "italic": "",
         "url": "/sinners/",
-        "blurb": "The role, the guitar, the song he co-wrote.",
+        "blurb": "His role as Sammie Moore and his songs on the soundtrack.",
         "image": "/img/hero-red.jpg"
       },
       {
-        "title": "Side B",
-        "italic": "the music",
+        "title": "Music",
+        "italic": "",
         "url": "/music/",
-        "blurb": "Four singles. Press play on any of them.",
+        "blurb": "Four singles, from 2023 to 2026.",
         "image": "/img/portrait-wide.jpg"
       },
       {
-        "title": "Screening room",
+        "title": "Videos",
         "italic": "",
         "url": "/watch/",
-        "blurb": "Official videos, live sets, the early days.",
+        "blurb": "Music videos, live performances and TV appearances.",
         "image": "/img/stage.jpg"
       },
       {
-        "title": "Contact sheet",
-        "italic": "portraits",
+        "title": "Photos",
+        "italic": "",
         "url": "/portraits/",
-        "blurb": "Nine frames under the safelight.",
+        "blurb": "Nine portraits.",
         "image": "/img/cs-window.jpg"
       },
       {
         "title": "Honors",
         "italic": "",
         "url": "/honors/",
-        "blurb": "One awards season, written down.",
+        "blurb": "Awards and nominations for Sinners.",
         "image": "/img/critics-choice.jpg"
       },
       {
         "title": "Press",
-        "italic": "on the record",
+        "italic": "",
         "url": "/press/",
-        "blurb": "Interviews, features and the big performances.",
+        "blurb": "Interviews, features and performances.",
         "image": "/img/cs-camera.jpg"
       }
     ]
@@ -111,7 +111,7 @@
   "show_honors_strip": true,
   "show_press": true,
   "press": {
-    "label": "In the press",
+    "label": "Press",
     "aside": "Latest",
     "count": 3,
     "more_label": "All press",

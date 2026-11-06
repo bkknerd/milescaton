@@ -20,11 +20,11 @@
       "url": "/music/"
     },
     {
-      "label": "Watch",
+      "label": "Videos",
       "url": "/watch/"
     },
     {
-      "label": "Portraits",
+      "label": "Photos",
       "url": "/portraits/"
     },
     {
@@ -38,12 +38,12 @@
   ],
   "loader": {
     "enabled": true,
-    "label": "Tuning — open D"
+    "label": "Loading"
   },
   "footer": {
-    "label": "Right now",
+    "label": "Latest",
     "aside": "Fall 2026",
-    "now": "“Lean On” is out on Columbia. No new screen role has been announced yet, so for now *the music is the story.*",
+    "now": "“Lean On” is out now on Columbia Records. No new film or TV role has been announced.",
     "photo": "/img/editorial.jpg",
     "photo_alt": "Editorial portrait of Miles Caton",
     "word": "Preacherboy",

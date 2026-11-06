@@ -6,7 +6,7 @@ pageKey: honors
 theme: red
 computed:
   description: "{{ honors.seo_description }}"
-next: { url: "/press/", title: "Press", italic: "on the record.", aside: "Coverage" }
+next: { url: "/press/", title: "Press", italic: "", aside: "" }
 ---
 {%- set total = (honors.won | length) + (honors.nominated | length) %}
 <section class="hon" id="honors" data-theme="red">

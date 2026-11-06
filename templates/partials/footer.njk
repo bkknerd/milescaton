@@ -2,7 +2,7 @@
   <div class="kick sm"><span>{{ site.footer.label }}</span><span>{{ site.footer.aside }}</span></div>
   <div class="ft-top">
     <div class="now"><p>{{ site.footer.now | mdi | safe }}</p></div>
-    {% if site.footer.photo %}<figure class="ft-pic" data-cursor="Color">{% img site.footer.photo, site.footer.photo_alt, "", "(max-width: 900px) 62vw, 16vw" %}</figure>{% endif %}
+    {% if site.footer.photo %}<figure class="ft-pic" data-cursor="View">{% img site.footer.photo, site.footer.photo_alt, "", "(max-width: 900px) 62vw, 16vw" %}</figure>{% endif %}
     <ul class="ft-links sm">
       {%- for l in site.footer.links %}
       <li><a href="{{ l.url }}" target="_blank" rel="noopener" data-cursor="Open">{{ l.label }} <span aria-hidden="true">↗</span><span class="vh"> (opens in a new tab)</span></a></li>
